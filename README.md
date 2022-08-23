@@ -1,4 +1,4 @@
-# Baudhilaw's Home 🏚
+# Budhilaw's Home 🏚
 
 > Heavily inspired from ([malob/nixpkgs](https://github.com/malob/nixpkgs)) ([r17x/nixpkgs](https://github.com/r17x/nixpkgs)).
 
