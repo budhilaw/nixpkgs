@@ -64,11 +64,20 @@
       # google-cloud-sdk
       python3
       pkg-config
+      go
+      gotools
+      gopls
+      go-outline
+      gocode
+      gopkgs
+      gocode-gomod
+      godef
+      golint
 
       ################################## 
       # Shell Integrations
       ################################## 
-      # starship # theme for shell (bash,fish,zsh)
+      starship # theme for shell (bash,fish,zsh)
 
       ################################## 
       # Useful Nix related tools

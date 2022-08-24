@@ -23,7 +23,7 @@
     prefmanager.inputs.flake-utils.follows = "flake-utils";
   };
 
-  outputs = { self, darwin, nixpkgs, home-manager, flake-utils, ... }@inputs:
+  outputs = { self, darwin, nixpkgs, home-manager, flake-utils , ... }@inputs:
     let
       inherit (darwin.lib) darwinSystem;
       inherit (inputs.nixpkgs-unstable.lib) attrValues makeOverridable optionalAttrs singleton;
@@ -130,7 +130,10 @@
       # `home-manager` modules
       homeManagerModules = {
         budhilaw-packages = import ./home/packages.nix;
+        budhilaw-shells = import ./home/shells.nix;
         budhilaw-git = import ./home/git.nix;
+        budhilaw-starship = import ./home/starship.nix;
+        budhilaw-starship-symbols = import ./home/starship-symbols.nix;
 
         home-user-info = { lib, ... }: {
           options.home.user-info =
@@ -140,9 +143,9 @@
 
       commonModules = {
         system = import ./system/system.nix;
+        system-shells = import ./system/shell.nix;
         users-primaryUser = import ./modules/user.nix;
         programs-nix-index = import ./system/nix-index.nix;
-        system-shells = import ./system/shells.nix;
       };
 
       # `nix-darwin` modules that are pending upstream, or patched versions waiting on upstream
