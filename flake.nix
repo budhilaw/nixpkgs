@@ -37,12 +37,21 @@
             inherit (final.pkgs-x86)
               # yadm
               niv;
+            
+            # See https://github.com/LnL7/nix-darwin/issues/477
+            nix = prev.nix.overrideAttrs (old: {
+              patches =
+                (old.patches or [])
+                ++ [
+                  ./patches/hush-nix-darwin.patch
+                ];
+            });
           })
         );
       };
 
       # Personal configuration shared between `nix-darwin` and plain `home-manager` configs.
-      homeManagerStateVersion = "22.11";
+      homeManagerStateVersion = "22.05";
 
       primaryUserInfo = {
         username = "budhilaw";
@@ -134,6 +143,7 @@
         budhilaw-git = import ./home/git.nix;
         budhilaw-starship = import ./home/starship.nix;
         budhilaw-starship-symbols = import ./home/starship-symbols.nix;
+        budhilaw-golang = import ./home/go.nix;
 
         home-user-info = { lib, ... }: {
           options.home.user-info =

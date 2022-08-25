@@ -31,18 +31,20 @@
     [
       ################################## 
       # common
-      ################################## 
+      ##################################
+      coreutils
       cascadia-code
       htop
       curl
       wget
       tree
       gnupg # required for pass git
+      clangStdenv
 
       ################################## 
       # Manager
       ################################## 
-      yadm
+      # yadm 
 
       ################################## 
       # Productivity
@@ -61,18 +63,7 @@
       rustPackages.rustc
       rustPackages.rustfmt
       rustPackages.cargo
-      # google-cloud-sdk
       python3
-      pkg-config
-      go
-      gotools
-      gopls
-      go-outline
-      gocode
-      gopkgs
-      gocode-gomod
-      godef
-      golint
 
       ################################## 
       # Shell Integrations

@@ -2,11 +2,18 @@
 
 let
   inherit (config.home.user-info) nixConfigDirectory;
+  inherit (config.users) primaryUser;
   inherit (lib) mkAfter;
   shellAliases = with pkgs; {
     # Nix related
     drb = "darwin-rebuild build --flake ${nixConfigDirectory}";
     drs = "darwin-rebuild switch --flake ${nixConfigDirectory}";
+    psc0 = "nix build ${nixConfigDirectory}#darwinConfigurations.Budhilaw.system --json | jq -r '.[].outputs | to_entries[].value' | cachix push budhilaw";
+
+    # Dev
+    godev = "cd ~/Development/Golang/";
+    phpdev = "cd ~/Development/PHP/";
+    localdb = "cd ~/Development/Database/; nix-shell shell.nix";
 
     # lenv show list generations aka list build version
     # senv switch generation <number>
@@ -81,14 +88,23 @@ in
       };
 
       interactiveShellInit = ''
-        # Fish color
-        set -U fish_color_command 6CB6EB --bold
-        set -U fish_color_redirection DEB974
-        set -U fish_color_operator DEB974
-        set -U fish_color_end C071D8 --bold
-        set -U fish_color_error EC7279 --bold
-        set -U fish_color_param 6CB6EB
-        set fish_greeting
+        # Golang
+        export GOPATH=$HOME/Development/Golang
+        export CC=clang
+
+        set -g fish_greeting ""
+
+        # Set Fish colors that aren't dependant the `$term_background`.
+        set -g fish_color_quote        cyan      # color of commands
+        set -g fish_color_redirection  brmagenta # color of IO redirections
+        set -g fish_color_end          blue      # color of process separators like ';' and '&'
+        set -g fish_color_error        red       # color of potential errors
+        set -g fish_color_match        --reverse # color of highlighted matching parenthesis
+        set -g fish_color_search_match --background=yellow
+        set -g fish_color_selection    --reverse # color of selected text (vi mode)
+        set -g fish_color_operator     green     # color of parameter expansion operators like '*' and '~'
+        set -g fish_color_escape       red       # color of character escapes like '\n' and and '\x70'
+        set -g fish_color_cancel       red       # color of the '^C' indicator on a canceled command
       '';
     };
 
