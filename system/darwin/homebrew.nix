@@ -48,7 +48,6 @@ in
     Slack = 803453959;
     Bitwarden = 1352778147;
     WhatsApp = 1147396723;
-    Skitch = 425955336;
     Outline = 1356178125;
   };
 
@@ -66,6 +65,8 @@ in
     "rectangle"
     "telegram"
     "font-fira-code-nerd-font"
+    "shottr"
+    "obs"
     # "upwork" issue install from homebrew
     "visual-studio-code"
   ];
