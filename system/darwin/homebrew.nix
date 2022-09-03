@@ -49,6 +49,7 @@ in
     Bitwarden = 1352778147;
     WhatsApp = 1147396723;
     Skitch = 425955336;
+    Outline = 1356178125;
   };
 
   # If an app isn't available in the Mac App Store, or the version in the App Store has

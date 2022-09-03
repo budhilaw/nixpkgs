@@ -39,7 +39,6 @@
       wget
       tree
       gnupg # required for pass git
-      clangStdenv
 
       ################################## 
       # Manager
@@ -84,7 +83,6 @@
       statix # lints and suggestions for the Nix programming language
   ] ++ lib.optionals stdenv.isDarwin [
     m-cli # useful macOS CLI commands
-    prefmanager # tool for working with macOS defaults
     xcode-install
   ];
 }

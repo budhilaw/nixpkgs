@@ -25,10 +25,6 @@ in
     };
   };
 
-  prefmanager = _: prev: {
-    prefmanager = inputs.prefmanager.packages.${prev.stdenv.system}.default;
-  };
-
   # Overlay useful on Macs with Apple Silicon
   apple-silicon = final: prev: optionalAttrs (prev.stdenv.system == "aarch64-darwin") {
     # Add access to x86 packages system is running Apple Silicon

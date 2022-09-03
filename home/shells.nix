@@ -88,9 +88,10 @@ in
       };
 
       interactiveShellInit = ''
-        # Golang
-        export GOPATH=$HOME/Development/Golang
-        export CC=clang
+        # GOLANG
+        export NIX_LDFLAGS="-F${pkgs.darwin.apple_sdk.frameworks.CoreFoundation}/Library/Frameworks -framework CoreFoundation $NIX_LDFLAGS";
+        export CC="$CC $NIX_LDFLAGS"
+        export GOPATH="/Users/budhilaw/Development/Golang"
 
         set -g fish_greeting ""
 

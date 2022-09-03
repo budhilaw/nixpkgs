@@ -2,7 +2,7 @@
   description = "Budhilaw's Nix darwin system configs.";
 
   inputs = {
-    # Package sets
+   # Package sets
     nixpkgs-master.url = "github:NixOS/nixpkgs/master";
     nixpkgs-stable.url = "github:NixOS/nixpkgs/nixpkgs-22.05-darwin";
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
@@ -17,10 +17,6 @@
     # Other sources
     flake-compat = { url = "github:edolstra/flake-compat"; flake = false; };
     flake-utils.url = "github:numtide/flake-utils";
-    prefmanager.url = "github:malob/prefmanager";
-    prefmanager.inputs.nixpkgs.follows = "nixpkgs-unstable";
-    prefmanager.inputs.flake-compat.follows = "flake-compat";
-    prefmanager.inputs.flake-utils.follows = "flake-utils";
   };
 
   outputs = { self, darwin, nixpkgs, home-manager, flake-utils , ... }@inputs:
@@ -141,9 +137,9 @@
         budhilaw-packages = import ./home/packages.nix;
         budhilaw-shells = import ./home/shells.nix;
         budhilaw-git = import ./home/git.nix;
+        budhilaw-go = import ./home/go.nix;
         budhilaw-starship = import ./home/starship.nix;
         budhilaw-starship-symbols = import ./home/starship-symbols.nix;
-        budhilaw-golang = import ./home/go.nix;
 
         home-user-info = { lib, ... }: {
           options.home.user-info =
