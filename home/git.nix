@@ -1,4 +1,4 @@
-{ ... }:
+{ config, pkgs, ... }:
 
 let
   budhilaw = {
@@ -32,8 +32,8 @@ in
     };
   };
 
-  programs.git.userEmail = budhilaw.email;
-  programs.git.userName = budhilaw.name;
+  programs.git.userEmail = config.home.user-info.email;
+  programs.git.userName = config.home.user-info.fullName;
   programs.git.signing.key = "8A2839421B711B45";
 
   programs.git.includes = [
