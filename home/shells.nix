@@ -40,12 +40,12 @@ in
         set fish_greeting
 
         # Golang
-        fish_add_path /Users/kai/Development/Golang/bin
-        export GOPATH=/Users/kai/Development/Golang/
-        export CC=/Library/Developer/CommandLineTools/usr/bin/gcc
+        fish_add_path /${if pkgs.stdenv.isDarwin then "Users" else "home"}/${config.home.username}/Development/Golang/bin
+        set -Ux GOPATH /${if pkgs.stdenv.isDarwin then "Users" else "home"}/${config.home.username}/Development/Golang/
+        set -Ux CC /Library/Developer/CommandLineTools/usr/bin/gcc
 
         # Jetbrains
-        fish_add_path /Users/kai/Library/Application\ Support/JetBrains/Toolbox/scripts
+        fish_add_path /${if pkgs.stdenv.isDarwin then "Users" else "home"}/${config.home.username}/Library/Application\ Support/JetBrains/Toolbox/scripts
 
         # rabbitmq
         fish_add_path /opt/homebrew/opt/rabbitmq/sbin/
@@ -72,10 +72,11 @@ in
           discharging_symbol = "💀 ";
         };
         git_branch = {
+          symbol = "🌱 ";
           format = "[$symbol$branch]($style) ";
         };
         gcloud = {
-          format = "[$symbol$active]($style) ";
+          disabled = true;
         };
       };
     };

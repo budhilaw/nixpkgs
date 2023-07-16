@@ -31,7 +31,7 @@ in
   ];
 
   homebrew.masApps = {
-    # WhatsApp = 1147396723;
+    Slack = 803453959;
   };
 
   homebrew.casks = [
@@ -52,7 +52,7 @@ in
     ##############
     # Productivity
     ##############
-    "warp"
+    "iterm2"
     "obs"
     "notion"
     "telegram"

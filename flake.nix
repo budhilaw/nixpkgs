@@ -46,7 +46,7 @@
       homeManagerStateVersion = "23.05";
 
       primaryUserInfo = rec {
-        username = "kai";
+        username = "budhilaw";
         fullName = "Ericsson Budhilaw";
         email = "budhilaw@icloud.com";
         nixConfigDirectory = "/Users/${username}/.config/nixpkgs";
