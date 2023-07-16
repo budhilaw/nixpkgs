@@ -26,8 +26,8 @@ in
       "git@gitlab.com:" = {
         insteadOf = "https://gitlab.com/";
       };
-      "git@bitbucket.org:" = {
-        insteadOf = "https://bitbucket.org/";
+      "git@github.com:" = {
+        insteadOf = "https://github.com/";
       };
     };
   };
@@ -42,7 +42,7 @@ in
       contents.user = budhilaw;
     }
     {
-      condition = "gitdir:/Users/kai/.config/nixpkgs";
+      condition = "gitdir:~/.config/nixpkgs";
       contents.user = budhilaw;
     }
   ];
