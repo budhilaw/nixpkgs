@@ -16,6 +16,9 @@
     darwin.url = "github:LnL7/nix-darwin";
     darwin.inputs.nixpkgs.follows = "nixpkgs-unstable";
 
+    # devenv
+    devenv.url = "github:cachix/devenv";
+
     # home-manager inputs
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs-unstable";
@@ -29,6 +32,7 @@
     , darwin
     , home-manager
     , flake-utils
+    , devenv
     , ...
     } @inputs:
 
@@ -244,6 +248,7 @@
       devShells = import ./devShells.nix {
         pkgs = self.legacyPackages.${system};
         precommit = checks.pre-commit-check;
+        devenv = self.devenv;
       };
 
       # }}}

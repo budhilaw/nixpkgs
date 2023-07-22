@@ -27,7 +27,7 @@ in
     # "homebrew/cask-versions"
     # "homebrew/core"
     "homebrew/services"
-    "shivammathur/php"
+    # "shivammathur/php"
     # "nrlquaker/createzap"
   ];
 
@@ -64,9 +64,8 @@ in
 
   homebrew.brews = [
     "rabbitmq"
-    "mariadb"
     "helm"
-    "shivammathur/php/php"
-    "shivammathur/php/php@7.1"
+    # "shivammathur/php/php"
+    # "shivammathur/php/php@7.1"
   ];
 }

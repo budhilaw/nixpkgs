@@ -46,13 +46,13 @@
       # Development
       ##################################
       pkg-config
-      go
       git
-      postgresql
-      postman
       sops
       google-cloud-sdk
-      apacheHttpd
+      postman
+      # go
+      # postgresql
+      # apacheHttpd
 
       ################################## 
       # Shell Integrations

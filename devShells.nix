@@ -9,25 +9,38 @@
     packages = precommit.packages or [ ];
   };
 
-  # `nix develop my#go`.
-  go = pkgs.mkShellNoCC {
-    description = "Go Development Environment";
-    buildInputs = with pkgs; [
-      go
+  go = devenv.lib.mkShell {
+    modules = [
+      ({ pkgs, ... }: {
+        # This is your devenv configuration
+        packages = [ pkgs.hello ];
 
-      # go lsp
-      gopls
+        enterShell = ''
+          hello
+        '';
 
-      # goimports, godoc, etc.
-      gotools
-
-      # https://github.com/golangci/golangci-lint
-      golangci-lint
+        processes.run.exec = "hello";
+      })
     ];
-
-    shellHook = ''
-      ${pkgs.go}/bin/go version
-    '';
   };
+
+  # `nix develop my#go`.
+  # go = pkgs.mkShellNoCC {
+  #   description = "Go Development Environment";
+  #   buildInputs = with pkgs; [
+  #     # Go-lang
+  #     go
+  #     gopls
+  #     gotools
+  #     golangci-lint
+
+  #     # MariaDB
+  #     mariadb
+  #   ];
+
+  #   shellHook = ''
+  #     ${pkgs.go}/bin/go version
+  #   '';
+  # };
 
 }
