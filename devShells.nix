@@ -1,4 +1,4 @@
-{ pkgs, precommit }:
+{ pkgs, precommit, devenv }:
 {
 
   # `nix develop my`.
