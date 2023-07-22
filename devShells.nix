@@ -27,7 +27,7 @@
 
     shellHook = ''
       ${pkgs.go}/bin/go version
-    ''
+    '';
   };
 
 }
