@@ -68,7 +68,7 @@
       ################################## 
       # Useful Nix related tools
       ################################## 
-      cachix
+      # cachix
       rnix-lsp
       home-manager
       nix-prefetch-git

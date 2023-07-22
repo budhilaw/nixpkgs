@@ -63,7 +63,7 @@ in
   ];
 
   homebrew.brews = [
-    "rabbitmq"
+    # "rabbitmq"
     "helm"
     # "shivammathur/php/php"
     # "shivammathur/php/php@7.1"

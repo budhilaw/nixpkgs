@@ -16,9 +16,6 @@
     darwin.url = "github:LnL7/nix-darwin";
     darwin.inputs.nixpkgs.follows = "nixpkgs-unstable";
 
-    # devenv
-    devenv.url = "github:cachix/devenv";
-
     # home-manager inputs
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs-unstable";
@@ -32,7 +29,6 @@
     , darwin
     , home-manager
     , flake-utils
-    , devenv
     , ...
     } @inputs:
 
@@ -245,11 +241,11 @@
       # With `nix.registry.my.flake = inputs.self`, development shells can be created by running,
       # e.g., `nix develop my#node`. 
 
-      devShells = import ./devShells.nix {
-        pkgs = self.legacyPackages.${system};
-        precommit = checks.pre-commit-check;
-        devenv = self.devenv;
-      };
+      # devShells = import ./devShells.nix {
+      #   pkgs = self.legacyPackages.${system};
+      #   precommit = checks.pre-commit-check;
+      #   devenv = inputs.devenv;
+      # };
 
       # }}}
 
