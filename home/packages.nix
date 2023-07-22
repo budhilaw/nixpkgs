@@ -52,6 +52,7 @@
       postman
       sops
       google-cloud-sdk
+      apacheHttpd
 
       ################################## 
       # Shell Integrations
@@ -62,6 +63,7 @@
       # Misc
       ################################## 
       # obs-studio
+      openssl
 
       ################################## 
       # Useful Nix related tools

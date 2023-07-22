@@ -6,6 +6,12 @@ let
     email = "ericsson.budhilaw@gmail.com";
     signingKey = "8A2839421B711B45";
   };
+
+  paper = {
+    name = "Ericsson Budhilaw";
+    email = "ericsson.budhilaw@paper.id";
+    signingKey = "0412CBF7631D8371";
+  };
 in
 {
   programs.git.enable = true;
@@ -23,6 +29,9 @@ in
     difftool.prompt = false;
     merge.tool = "code";
     url = {
+      "git@github.com:paper-indonesia" = {
+        insteadOf = "https://github.com/paper-indonesia/";
+      };
       "git@gitlab.com:" = {
         insteadOf = "https://gitlab.com/";
       };
@@ -44,6 +53,10 @@ in
     {
       condition = "gitdir:~/.config/nixpkgs";
       contents.user = budhilaw;
+    }
+    {
+      condition = "gitdir:~/Development/Paper/Golang/";
+      contents.user = paper;
     }
   ];
 

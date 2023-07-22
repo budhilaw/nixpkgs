@@ -41,14 +41,22 @@ in
 
         # Golang
         fish_add_path /${if pkgs.stdenv.isDarwin then "Users" else "home"}/${config.home.username}/Development/Golang/bin
-        set -Ux GOPATH /${if pkgs.stdenv.isDarwin then "Users" else "home"}/${config.home.username}/Development/Golang/
-        set -Ux CC /Library/Developer/CommandLineTools/usr/bin/gcc
+        set -gx GOPATH $HOME/Development/Golang/:$HOME/Development/Paper/Golang
+        set -gx CC /Library/Developer/CommandLineTools/usr/bin/gcc
+        set -gx GOPRIVATE "github.com/paper-indonesia/*"
 
         # Jetbrains
         fish_add_path /${if pkgs.stdenv.isDarwin then "Users" else "home"}/${config.home.username}/Library/Application\ Support/JetBrains/Toolbox/scripts
 
         # rabbitmq
         fish_add_path /opt/homebrew/opt/rabbitmq/sbin/
+
+        fish_add_path /opt/homebrew/bin
+
+        # Aliases
+        alias papergo="cd $HOME/Development/Paper/Golang/"
+        alias paperphp="cd $HOME/Development/Paper/PHP/"
+        alias godev="$HOME/Development/Golang/"
       '';
     };
 
@@ -72,7 +80,7 @@ in
           discharging_symbol = "💀 ";
         };
         git_branch = {
-          symbol = "🌱 ";
+          # symbol = "🌱 ";
           format = "[$symbol$branch]($style) ";
         };
         gcloud = {

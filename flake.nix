@@ -241,38 +241,12 @@
       # With `nix.registry.my.flake = inputs.self`, development shells can be created by running,
       # e.g., `nix develop my#node`. 
 
-      # devShells = let pkgs = self.legacyPackages.${system}; in
-      #   import ./devShells.nix { inherit pkgs; inherit (inputs.nixpkgs-unstable) lib; } // {
-
-      #     # `nix develop my`.
-      #     default = pkgs.mkShell {
-      #       name = "r17x_devshells_default";
-      #       shellHook = '''' + checks.pre-commit-check.shellHook;
-      #       buildInputs = checks.pre-commit-check.buildInputs or [ ];
-      #       packages = checks.pre-commit-check.packages or [ ];
-      #     };
-
-      #     # this development shell use for ocaml.org
-      #     ocamlorg =
-      #       let ocamlPackages = pkgs.ocaml-ng.ocamlPackages_4_14; in
-      #       pkgs.mkShell {
-      #         name = "r17x_ocaml_org";
-      #         buildInputs = with ocamlPackages; [ ocaml merlin ];
-      #         nativeBuildInputs = with pkgs; [
-      #           opam
-      #           pkg-config
-      #           libev
-      #           oniguruma
-      #           openssl
-      #           gmp
-      #         ];
-      #       };
-
-      #   };
+      devShells = import ./devShells.nix {
+        pkgs = self.legacyPackages.${system};
+        precommit = checks.pre-commit-check;
+      };
 
       # }}}
 
     });
 }
-
-# vim: foldmethod=marker
