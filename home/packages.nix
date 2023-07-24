@@ -88,5 +88,6 @@
         m-cli # useful macOS CLI commands
         xcode-install
         rectangle
+        pritunl
       ];
 }

@@ -8,9 +8,9 @@
     nixpkgs-stable.url = "github:NixOS/nixpkgs/nixpkgs-23.05-darwin";
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
 
-    # Other sources / nix utilities
+    # Flake utilities
     flake-compat = { url = "github:edolstra/flake-compat"; flake = false; };
-    utils.url = "github:numtide/flake-utils";
+    flake-utils.url = "github:numtide/flake-utils";
 
     # Environment/system management
     darwin.url = "github:LnL7/nix-darwin";
@@ -19,6 +19,10 @@
     # home-manager inputs
     home-manager.url = "github:nix-community/home-manager/release-23.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+
+    # dvt
+    dvt.url = "github:efishery/dvt";
+    dvt.inputs.nixpkgs.follows = "nixpkgs";
 
     # utilities
     precommit.url = "github:cachix/pre-commit-hooks.nix";
@@ -29,13 +33,13 @@
     { self
     , darwin
     , home-manager
-    , utils
+    , flake-utils
     , ...
     } @inputs:
 
     let
       inherit (darwin.lib) darwinSystem;
-      inherit (self.lib) attrValues makeOverridable singleton optionalAttrs;
+      inherit (inputs.nixpkgs-unstable.lib) attrValues makeOverridable singleton optionalAttrs;
       # Overlays --------------------------------------------------------------------------------{{{
 
       config = { allowUnfree = true; };
@@ -81,7 +85,8 @@
       # Configuration for `nixpkgs`
       defaultNixpkgs = {
         inherit config;
-        overlays = attrValues overlays [ ];
+        overlays = attrValues overlays
+          ++ singleton (inputs.dvt.overlay);
       };
 
       # Personal configuration shared between `nix-darwin` and plain `home-manager` configs.
@@ -92,9 +97,6 @@
         fullName = "Ericsson Budhilaw";
         email = "budhilaw@icloud.com";
         nixConfigDirectory = "/Users/${username}/.config/nixpkgs";
-        within = {
-          gpg.enable = true;
-        };
       };
 
       # Modules shared by most `nix-darwin` personal configurations.
@@ -210,9 +212,9 @@
 
       # }}}
 
-    } // utils.lib.eachDefaultSystem (system: rec {
+    } // flake-utils.lib.eachDefaultSystem (system: rec {
 
-      legacyPackages = import inputs.nixpkgs (defaultNixpkgs // { inherit system; });
+      legacyPackages = import inputs.nixpkgs-unstable (defaultNixpkgs // { inherit system; });
 
       # Checks ----------------------------------------------------------------------{{{
       # e.g., run `nix flake check` in $HOME/.config/nixpkgs.
