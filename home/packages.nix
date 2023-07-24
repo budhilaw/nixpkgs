@@ -41,6 +41,14 @@
       ##################################
       neofetch # fancy fetch information
       discord
+      lsd
+      ncdu
+      htop
+      tldr
+      jq
+      fd
+      wget
+      curl
 
       ################################## 
       # Development
@@ -50,6 +58,7 @@
       sops
       google-cloud-sdk
       postman
+      # rabbitmq-server // Bus error: 10 in Sonoma MacOs
       # go
       # postgresql
       # apacheHttpd

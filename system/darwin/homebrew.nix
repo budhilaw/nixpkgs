@@ -27,7 +27,6 @@ in
     # "homebrew/cask-versions"
     # "homebrew/core"
     "homebrew/services"
-    # "shivammathur/php"
     # "nrlquaker/createzap"
   ];
 
@@ -53,19 +52,15 @@ in
     ##############
     # Productivity
     ##############
-    # "iterm2"
     "obs"
     "notion"
     "telegram"
     "appcleaner"
     "logi-options-plus"
-    "pritunl"
+    # "pritunl"
   ];
 
   homebrew.brews = [
-    # "rabbitmq"
-    "helm"
-    # "shivammathur/php/php"
-    # "shivammathur/php/php@7.1"
+    # ...
   ];
 }
