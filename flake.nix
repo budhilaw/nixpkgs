@@ -73,10 +73,6 @@
               inherit config;
             };
           };
-          # ------------------------------------------------------------------------------------}}}
-
-          mac-pkgs = import ./overlays/mac-pkgs;
-
         };
 
       # }}}
@@ -245,10 +241,10 @@
       # With `nix.registry.my.flake = inputs.self`, development shells can be created by running,
       # e.g., `nix develop my#node`. 
 
-      # devShells = import ./devShells.nix {
-      #   pkgs = self.legacyPackages.${system};
-      #   precommit = checks.pre-commit-check;
-      # };
+      devShells = import ./devShells.nix {
+        pkgs = self.legacyPackages.${system};
+        precommit = checks.pre-commit-check;
+      };
 
       # }}}
 

@@ -40,7 +40,6 @@
       # Productivity
       ##################################
       neofetch # fancy fetch information
-      discord
       lsd
       ncdu
       htop
@@ -57,11 +56,7 @@
       git
       sops
       google-cloud-sdk
-      postman
       # rabbitmq-server // Bus error: 10 in Sonoma MacOs
-      # go
-      # postgresql
-      # apacheHttpd
 
       ################################## 
       # Shell Integrations
@@ -88,6 +83,7 @@
         m-cli # useful macOS CLI commands
         xcode-install
         rectangle
-        pritunl
+        postman
+        discord
       ];
 }

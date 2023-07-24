@@ -9,20 +9,20 @@
     packages = precommit.packages or [ ];
   };
 
-  go = devenv.lib.mkShell {
-    modules = [
-      ({ pkgs, ... }: {
-        # This is your devenv configuration
-        packages = [ pkgs.hello ];
+  # go = devenv.lib.mkShell {
+  #   modules = [
+  #     ({ pkgs, ... }: {
+  #       # This is your devenv configuration
+  #       packages = [ pkgs.hello ];
 
-        enterShell = ''
-          hello
-        '';
+  #       enterShell = ''
+  #         hello
+  #       '';
 
-        processes.run.exec = "hello";
-      })
-    ];
-  };
+  #       processes.run.exec = "hello";
+  #     })
+  #   ];
+  # };
 
   # `nix develop my#go`.
   # go = pkgs.mkShellNoCC {

@@ -57,7 +57,7 @@ in
     "telegram"
     "appcleaner"
     "logi-options-plus"
-    # "pritunl"
+    "pritunl"
   ];
 
   homebrew.brews = [
