@@ -55,8 +55,7 @@
       pkg-config
       git
       sops
-      google-cloud-sdk
-      # rabbitmq-server // Bus error: 10 in Sonoma MacOs
+      # google-cloud-sdk
 
       ################################## 
       # Shell Integrations
@@ -72,7 +71,7 @@
       ################################## 
       # Useful Nix related tools
       ################################## 
-      # cachix
+      cachix
       rnix-lsp
       home-manager
       nix-prefetch-git

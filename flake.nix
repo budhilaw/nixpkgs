@@ -183,6 +183,7 @@
         home-activation = import ./home/activation.nix;
         home-packages = import ./home/packages.nix;
         home-shells = import ./home/shells.nix;
+        home-ssh = import ./home/ssh.nix;
         home-git = import ./home/git.nix;
 
         home-user-info = { lib, ... }: {

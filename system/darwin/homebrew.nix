@@ -41,6 +41,7 @@ in
     "raycast"
     "bitwarden"
     "microsoft-edge"
+    "google-chrome"
     "shottr"
     
     ##############
@@ -58,6 +59,7 @@ in
     "appcleaner"
     "logi-options-plus"
     "pritunl"
+    "keka"
   ];
 
   homebrew.brews = [
