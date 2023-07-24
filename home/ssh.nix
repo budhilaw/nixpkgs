@@ -1,13 +1,25 @@
-{ ... }:
+{ config, pkgs, lib, ... }:
 
+let
+
+in
 {
+  programs.ssh = {
+    enable = true;
+    matchBlocks = {
+      # Personal
+      personal = {
+        hostname = "github.com";
+        user = "git";
+        identityFile = "~/.ssh/id_ed25519_personal";
+      };
 
-  programs.ssh.matchBlocks = {
-    "work.github.com" = {
-      user = "git";
-      IdentityFile = "~/.ssh/id_ed25519_work";
-      hostname = "github.com"
+      # Paper.id
+      work = {
+        hostname = "github.com";
+        user = "git";
+        identityFile = "~/.ssh/id_ed25519_work";
+      };
     };
   };
-
 }
