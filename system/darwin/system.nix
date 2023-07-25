@@ -3,6 +3,11 @@
   # Auto upgrade nix package and the daemon service.
   services.nix-daemon.enable = true;
 
-  # services.mysql.enable = true;
-  # services.mysql.package = pkgs.mariadb;
+  # Set DNS to use dnscrypt
+  networking.dns = [
+    "127.0.0.1"
+    "192.168.18.1"
+    "1.1.1.1"
+    "1.0.0.1"
+  ];
 }
