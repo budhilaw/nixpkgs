@@ -53,15 +53,14 @@ in
         # Jetbrains
         fish_add_path /${if pkgs.stdenv.isDarwin then "Users" else "home"}/${config.home.username}/Library/Application\ Support/JetBrains/Toolbox/scripts
 
-        # rabbitmq
-        # fish_add_path /opt/homebrew/opt/rabbitmq/sbin/
-
+        # brew bin
         fish_add_path /opt/homebrew/bin
 
         # Aliases
-        alias papergo="cd $HOME/Development/Paper/Golang/"
-        alias paperphp="cd $HOME/Development/Paper/PHP/"
-        alias godev="$HOME/Development/Golang/"
+        alias dev="cd $HOME/Development/"
+        alias nixdir="cd ~/.config/nixpkgs"
+        alias di="devenv init"
+        alias ds="devenv shell -c $SHELL"
       '';
     };
 
