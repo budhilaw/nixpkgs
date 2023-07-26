@@ -4,13 +4,13 @@ let
   budhilaw = {
     name = "Ericsson Budhilaw";
     email = "ericsson.budhilaw@gmail.com";
-    signingKey = "8A2839421B711B45";
+    signingKey = "26DEBED91762BC50";
   };
 
   paper = {
     name = "Ericsson Budhilaw";
     email = "ericsson.budhilaw@paper.id";
-    signingKey = "0412CBF7631D8371";
+    signingKey = "E290C3025FCF9462";
   };
 in
 {
@@ -41,22 +41,31 @@ in
     };
   };
 
-  programs.git.userEmail = budhilaw.email;
-  programs.git.userName = budhilaw.name;
-  programs.git.signing.key = "8A2839421B711B45";
+  # programs.git.userEmail = budhilaw.email;
+  # programs.git.userName = budhilaw.name;
+  # programs.git.signing.key = "8A2839421B711B45";
 
   programs.git.includes = [
     {
-      condition = "gitdir:~/Development/Golang/";
+      condition = "gitdir:~/Dev/Personal/";
       contents.user = budhilaw;
+      contents.commit = {
+        gpgSign = true;
+      };
+    }
+    {
+      condition = "gitdir:~/Dev/Paper/";
+      contents.user = paper;
+      contents.commit = {
+        gpgSign = true;
+      };
     }
     {
       condition = "gitdir:~/.config/nixpkgs";
       contents.user = budhilaw;
-    }
-    {
-      condition = "gitdir:~/Development/Paper/Golang/";
-      contents.user = paper;
+      contents.commit = {
+        gpgSign = true;
+      };
     }
   ];
 

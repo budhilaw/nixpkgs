@@ -44,10 +44,10 @@ in
         direnv export fish | source
 
         # Golang
-        # fish_add_path /${if pkgs.stdenv.isDarwin then "Users" else "home"}/${config.home.username}/Development/Golang/bin
+        # fish_add_path /${if pkgs.stdenv.isDarwin then "Users" else "home"}/${config.home.username}/Dev/Golang/bin
         # set -gx GOPATH $HOME/Development/Golang/:$HOME/Development/Paper/Golang
-        set -gx GOPATH $HOME/Development/Golang/
-        set -gx GOPRIVATE "github.com/paper-indonesia/*"
+        # set -gx GOPATH $HOME/Development/Golang/
+        # set -gx GOPRIVATE "github.com/paper-indonesia/*"
         # set -gx CC /Library/Developer/CommandLineTools/usr/bin/gcc
 
         # Jetbrains
@@ -57,10 +57,12 @@ in
         fish_add_path /opt/homebrew/bin
 
         # Aliases
-        alias dev="cd $HOME/Development/"
+        alias dev="cd $HOME/Dev/"
+        alias personaldev="cd $HOME/Dev/Personal"
+        alias paperdev="cd $HOME/Dev/Paper"
         alias nixdir="cd ~/.config/nixpkgs"
         alias di="devenv init"
-        alias ds="devenv shell -c $SHELL"
+        alias ds="devenv shell -c $SHELL -f"
       '';
     };
 
