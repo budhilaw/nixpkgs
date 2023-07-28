@@ -15,7 +15,7 @@ in
       };
 
       # Paper.id
-      work = {
+      "github.com:paper-indonesia" = {
         hostname = "github.com";
         user = "git";
         identityFile = "~/.ssh/id_ed25519_work";

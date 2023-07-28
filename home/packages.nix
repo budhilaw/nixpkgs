@@ -55,6 +55,7 @@
       pkg-config
       git
       sops
+      cloudflared
       # google-cloud-sdk
 
       ################################## 
