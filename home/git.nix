@@ -61,7 +61,7 @@ in
       };
     }
     {
-      condition = "gitdir:~/.config/nixpkgs";
+      condition = "gitdir:~/.config/nixpkgs/";
       contents.user = budhilaw;
       contents.commit = {
         gpgSign = true;
