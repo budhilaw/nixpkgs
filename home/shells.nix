@@ -62,7 +62,7 @@ in
         alias paperdev="cd $HOME/Dev/Paper"
         alias nixdir="cd ~/.config/nixpkgs"
         alias di="devenv init"
-        alias ds="devenv shell -c $SHELL -f"
+        alias ds="devenv shell -c $SHELL"
       '';
     };
 
