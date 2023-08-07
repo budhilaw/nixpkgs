@@ -1,0 +1,17 @@
+{
+    "packages": [
+      
+    ],
+    "shell": {
+      "init_hook": [
+        "export GOPATH='/Users/budhilaw/Dev/Golang'",
+        "export GOBIN='/Users/budhilaw/Dev/Golang/bin'"
+      ],
+      "scripts": {
+        "test": [
+          "echo \"Error: no test specified\" && exit 1"
+        ]
+      }
+    }
+  }
+  

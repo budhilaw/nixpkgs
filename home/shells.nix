@@ -3,8 +3,80 @@
 let
   inherit (config.home.user-info) nixConfigDirectory;
   inherit (lib) mkAfter;
+
+  commandFoldl' = builtins.foldl' (a: b: a + b + '' &&'') '''';
+  shellAliases = with pkgs;
+    {
+      # Nix related
+      nclean = commandFoldl' [
+        "nix profile wipe-history"
+        "nix-collect-garbage"
+        "nix-collect-garbage -d"
+        "nix-collect-garbage --delete-old"
+        "nix store gc"
+        "nix store optimise"
+        "nix-store --verify --repair --check-contents"
+      ];
+      drb = "darwin-rebuild build --flake ${nixConfigDirectory}";
+      drs = "darwin-rebuild switch --flake ${nixConfigDirectory}";
+      psc0 = "nix build ${nixConfigDirectory}#darwinConfigurations.budhilaw.system --json | jq -r '.[].outputs | to_entries[].value' | cachix push budhilaw";
+      
+      # is equivalent to: nix build --recreate-lock-file
+      flakeup-all = "nix flake update ${nixConfigDirectory}";
+      # example: 
+      # $ flakeup home-manager
+      flakeup = "nix flake lock ${nixConfigDirectory} --update-input";
+      nb = "nix build";
+      ndp = "nix develop";
+      nf = "nix flake";
+      nr = "nix run";
+      ns = "nix-shell";
+      nq = "nix search";
+      
+      # Cryptography
+      # age = "${rage}/bin/rage";
+
+      # Devenv related
+      di = "devenv init";
+      ds = "devenv shell -c $SHELL";
+
+      # Shell related
+      dev = "cd $HOME/Dev/";
+      grep = "${ripgrep}/bin/rg";
+      ll = "exa -l -g --icons --git";
+      l = "ls -l";
+      la = "ls -a";
+      lla = "ls -la";
+      lt = "ls --tree";
+      cat = "${bat}/bin/bat";
+      du = "${du-dust}/bin/dust";
+      git = "${git}/bin/git";
+      pullhead = "git pull origin (git rev-parse --abbrev-ref HEAD)";
+      plh = "pullhead";
+      pushhead = "git push origin (git rev-parse --abbrev-ref HEAD)";
+      psh = "pushhead";
+      gi = "gitignore";
+      g = "git";
+      gtemp = "git commit -m \"temp\" --no-verify";
+      gf = "git flow";
+      gl = "git log --graph --oneline --all";
+      gll = "git log --oneline --decorate --all --graph --stat";
+      gld = "git log --oneline --all --pretty=format:\"%h%x09%an%x09%ad%x09%s\"";
+      gls = "gl --show-signature";
+      gfa = "git fetch --all";
+      grc = "git rebase --continue";
+      rm = "rm -i";
+
+      # Development
+      # docker = "${pkgs.podman}/bin/podman";
+      # docker-compose = "${pkgs.podman-compose}/bin/podman-compose";
+    };
 in
 {
+
+  home = with pkgs;{
+    shellAliases = shellAliases;
+  };
 
   programs = {
     # jump like `z` or `fasd` 
@@ -13,22 +85,6 @@ in
     # https://rycee.gitlab.io/home-manager/options.html#opt-programs.fish.enable
     fish = {
       enable = true;
-      # Fish plugins 
-      # See: 
-      # https://github.com/NixOS/nixpkgs/tree/90e20fc4559d57d33c302a6a1dce545b5b2a2a22/pkgs/shells/fish/plugins 
-      # for list available plugins built-in nixpkgs
-      plugins = with pkgs.fishPlugins;[
-        {
-          name = "nix-env";
-          src = pkgs.fetchFromGitHub {
-            owner = "lilyball";
-            repo = "nix-env.fish";
-            rev = "7b65bd228429e852c8fdfa07601159130a818cfa";
-            sha256 = "069ybzdj29s320wzdyxqjhmpm9ir5815yx6n522adav0z2nz8vs4";
-          };
-        }
-      ];
-
       interactiveShellInit = ''
         # Fish color
         set -U fish_color_command 6CB6EB --bold
@@ -57,12 +113,12 @@ in
         fish_add_path /opt/homebrew/bin
 
         # Aliases
-        alias dev="cd $HOME/Dev/"
-        alias personaldev="cd $HOME/Dev/Personal"
-        alias paperdev="cd $HOME/Dev/Paper"
-        alias nixdir="cd ~/.config/nixpkgs"
-        alias di="devenv init"
-        alias ds="devenv shell -c $SHELL"
+        # alias dev="cd $HOME/Dev/"
+        # alias personaldev="cd $HOME/Dev/Personal"
+        # alias paperdev="cd $HOME/Dev/Paper"
+        # alias nixdir="cd ~/.config/nixpkgs"
+        # alias di="devenv init"
+        # alias ds="devenv shell -c $SHELL"
       '';
     };
 

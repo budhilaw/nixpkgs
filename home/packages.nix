@@ -48,6 +48,7 @@
       fd
       wget
       curl
+      exa
 
       ################################## 
       # Development
@@ -56,6 +57,7 @@
       git
       sops
       cloudflared
+      docker
       # google-cloud-sdk
 
       ################################## 

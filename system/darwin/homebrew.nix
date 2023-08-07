@@ -43,12 +43,14 @@ in
     "microsoft-edge"
     "google-chrome"
     "shottr"
+    "iina"
     
     ##############
     # Development
     ##############
     "jetbrains-toolbox"
     "visual-studio-code"
+    "orbstack"
 
     ##############
     # Productivity
@@ -60,6 +62,8 @@ in
     "logi-options-plus"
     "pritunl"
     "keka"
+    "calibre"
+    "arc"
   ];
 
   homebrew.brews = [
