@@ -51,6 +51,8 @@ in
     "jetbrains-toolbox"
     "visual-studio-code"
     "orbstack"
+    "postman"
+    "github"
 
     ##############
     # Productivity
@@ -64,9 +66,14 @@ in
     "keka"
     "calibre"
     "arc"
+    "publish-or-perish"
   ];
 
   homebrew.brews = [
-    # ...
+    ##############
+    # Development
+    ##############
+    "mockery"
+    "golang-migrate"
   ];
 }

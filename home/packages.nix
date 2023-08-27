@@ -85,7 +85,7 @@
         m-cli # useful macOS CLI commands
         xcode-install
         rectangle
-        postman
         discord
+        zoom-us
       ];
 }
