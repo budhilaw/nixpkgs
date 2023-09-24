@@ -148,6 +148,9 @@ in
         gcloud = {
           disabled = true;
         };
+        docker_context = {
+          disabled = true;
+        };
       };
     };
   };

@@ -44,6 +44,7 @@ in
     "google-chrome"
     "shottr"
     "iina"
+    "warp"
     
     ##############
     # Development
@@ -75,5 +76,7 @@ in
     ##############
     "mockery"
     "golang-migrate"
+    "p7zip"
+    "unar"
   ];
 }

@@ -58,6 +58,8 @@
       sops
       cloudflared
       docker
+      graphviz
+      # neovim
       # google-cloud-sdk
 
       ################################## 
@@ -78,6 +80,7 @@
       rnix-lsp
       home-manager
       nix-prefetch-git
+
     ] ++ lib.optionals
       stdenv.isDarwin
       [

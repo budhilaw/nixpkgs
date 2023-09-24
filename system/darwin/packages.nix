@@ -8,7 +8,7 @@
   # `home-manager` currently has issues adding them to `~/Applications`
   # Issue: https://github.com/nix-community/home-manager/issues/1341
   environment.systemPackages = with pkgs; [
-    iterm2
+    # iterm2
     dnscrypt-proxy2
     terminal-notifier
     darwin.cf-private

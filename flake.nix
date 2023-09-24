@@ -81,8 +81,8 @@
       # Configuration for `nixpkgs`
       defaultNixpkgs = {
         inherit config;
-        overlays = attrValues overlays
-          ++ singleton (inputs.dvt.overlay);
+        # overlays = attrValues overlays
+        #   ++ singleton (inputs.dvt.overlay);
       };
 
       # Personal configuration shared between `nix-darwin` and plain `home-manager` configs.
@@ -205,6 +205,7 @@
         system-darwin-packages = import ./system/darwin/packages.nix;
         system-darwin-gpg = import ./system/darwin/gpg.nix;
         system-darwin-homebrew = import ./system/darwin/homebrew.nix;
+        system-percobaan = import ./system/test.nix;
       };
 
       # }}}
