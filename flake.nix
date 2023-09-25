@@ -205,7 +205,6 @@
         system-darwin-packages = import ./system/darwin/packages.nix;
         system-darwin-gpg = import ./system/darwin/gpg.nix;
         system-darwin-homebrew = import ./system/darwin/homebrew.nix;
-        system-percobaan = import ./system/test.nix;
       };
 
       # }}}
