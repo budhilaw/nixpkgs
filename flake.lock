@@ -28,15 +28,15 @@
         "utils": "utils"
       },
       "locked": {
-        "lastModified": 1689764381,
-        "narHash": "sha256-9UuaXrCRq8TyRVhq6721kQjFb/9PtHa7dVuQnue/xdg=",
-        "owner": "efishery",
+        "lastModified": 1695632216,
+        "narHash": "sha256-V7ASvtYRznarJf4ys8I5f68Y0MBQD05A+a7GMEwbDqc=",
+        "owner": "budhilaw-paper",
         "repo": "dvt",
-        "rev": "85ed032478dcb25462807b665b6c988c0e49ce7b",
+        "rev": "1754d7f6cb528c83c4ae457b21f6fa253dc77393",
         "type": "github"
       },
       "original": {
-        "owner": "efishery",
+        "owner": "budhilaw-paper",
         "repo": "dvt",
         "type": "github"
       }

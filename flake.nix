@@ -21,7 +21,7 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
     # dvt
-    dvt.url = "github:efishery/dvt";
+    dvt.url = "github:budhilaw-paper/dvt";
     dvt.inputs.nixpkgs.follows = "nixpkgs";
 
     # utilities
