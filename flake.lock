@@ -20,27 +20,6 @@
         "type": "github"
       }
     },
-    "dvt": {
-      "inputs": {
-        "nixpkgs": [
-          "nixpkgs"
-        ],
-        "utils": "utils"
-      },
-      "locked": {
-        "lastModified": 1695632216,
-        "narHash": "sha256-V7ASvtYRznarJf4ys8I5f68Y0MBQD05A+a7GMEwbDqc=",
-        "owner": "budhilaw-paper",
-        "repo": "dvt",
-        "rev": "1754d7f6cb528c83c4ae457b21f6fa253dc77393",
-        "type": "github"
-      },
-      "original": {
-        "owner": "budhilaw-paper",
-        "repo": "dvt",
-        "type": "github"
-      }
-    },
     "flake-compat": {
       "flake": false,
       "locked": {
@@ -255,10 +234,30 @@
         "type": "github"
       }
     },
+    "pvt": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "utils": "utils"
+      },
+      "locked": {
+        "lastModified": 1695632546,
+        "narHash": "sha256-mIiWJzWcj1k4lwYVJTsROjmHN5iMgE3mrN7PxgkQKEk=",
+        "owner": "budhilaw-paper",
+        "repo": "dvt",
+        "rev": "3149b3d0f476e16a506242a59613bf91ce7fa5a7",
+        "type": "github"
+      },
+      "original": {
+        "owner": "budhilaw-paper",
+        "repo": "dvt",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "darwin": "darwin",
-        "dvt": "dvt",
         "flake-compat": "flake-compat",
         "flake-utils": "flake-utils",
         "home-manager": "home-manager",
@@ -266,7 +265,8 @@
         "nixpkgs-master": "nixpkgs-master",
         "nixpkgs-stable": "nixpkgs-stable",
         "nixpkgs-unstable": "nixpkgs-unstable",
-        "precommit": "precommit"
+        "precommit": "precommit",
+        "pvt": "pvt"
       }
     },
     "systems": {

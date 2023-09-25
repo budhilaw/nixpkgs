@@ -20,9 +20,9 @@
     home-manager.url = "github:nix-community/home-manager/release-23.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
-    # dvt
-    dvt.url = "github:budhilaw-paper/dvt";
-    dvt.inputs.nixpkgs.follows = "nixpkgs";
+    # pvt
+    pvt.url = "github:budhilaw-paper/dvt";
+    pvt.inputs.nixpkgs.follows = "nixpkgs";
 
     # utilities
     precommit.url = "github:cachix/pre-commit-hooks.nix";
@@ -82,7 +82,7 @@
       defaultNixpkgs = {
         inherit config;
         overlays = attrValues overlays
-          ++ singleton (inputs.dvt.overlay);
+          ++ singleton (inputs.pvt.overlay);
       };
 
       # Personal configuration shared between `nix-darwin` and plain `home-manager` configs.
@@ -126,7 +126,7 @@
             # Add a registry entry for this flake
             nix.registry = {
               my.flake = self;
-              dvt.flake = inputs.dvt;
+              pvt.flake = inputs.pvt;
             };
           }
         )
