@@ -80,7 +80,7 @@
       rnix-lsp
       home-manager
       nix-prefetch-git
-
+      dvt
     ] ++ lib.optionals
       stdenv.isDarwin
       [

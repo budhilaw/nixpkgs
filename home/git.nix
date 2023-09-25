@@ -44,10 +44,6 @@ in
     };
   };
 
-  # programs.git.userEmail = budhilaw.email;
-  # programs.git.userName = budhilaw.name;
-  # programs.git.signing.key = "8A2839421B711B45";
-
   programs.git.includes = [
     {
       condition = "gitdir:~/Dev/Personal/";
