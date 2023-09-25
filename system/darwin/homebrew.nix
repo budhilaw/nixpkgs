@@ -53,7 +53,8 @@ in
     "visual-studio-code"
     "orbstack"
     "postman"
-    "github"
+    # "github"
+    "docker"
 
     ##############
     # Productivity

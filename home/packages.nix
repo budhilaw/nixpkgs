@@ -57,8 +57,8 @@
       git
       sops
       cloudflared
-      docker
       graphviz
+      # docker
       # neovim
       # google-cloud-sdk
 
