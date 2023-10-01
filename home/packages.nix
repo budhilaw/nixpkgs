@@ -58,9 +58,8 @@
       sops
       cloudflared
       graphviz
-      # docker
-      # neovim
-      # google-cloud-sdk
+      docker
+      neovim
 
       ################################## 
       # Shell Integrations
@@ -70,7 +69,6 @@
       ################################## 
       # Misc
       ################################## 
-      # obs-studio
       openssl
 
       ################################## 
@@ -80,7 +78,7 @@
       rnix-lsp
       home-manager
       nix-prefetch-git
-      pvt
+      dvt
     ] ++ lib.optionals
       stdenv.isDarwin
       [

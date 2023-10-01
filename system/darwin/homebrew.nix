@@ -40,11 +40,12 @@ in
     ##############
     "raycast"
     "bitwarden"
-    "microsoft-edge"
+    # "microsoft-edge"
     "google-chrome"
     "shottr"
     "iina"
     "warp"
+    "obsidian"
     
     ##############
     # Development
@@ -53,8 +54,6 @@ in
     "visual-studio-code"
     "orbstack"
     "postman"
-    # "github"
-    "docker"
 
     ##############
     # Productivity
