@@ -12,11 +12,10 @@
 
       trusted-users = [
         "@admin"
-        "kai"
+        "budhilaw"
       ];
 
       substituters = [
-        "https://cache.komunix.org"
         "https://nix-community.cachix.org"
         "https://budhilaw.cachix.org/"
       ];
@@ -38,11 +37,11 @@
     # this is configuration for /etc/nix/nix.conf
     # so it will generated /etc/nix/nix.conf
     extraOptions = ''
-      experimental-features = nix-command flakes
-      keep-outputs = true
-      keep-derivations = true
+     experimental-features = nix-command flakes
+     keep-outputs = true
+     keep-derivations = true
     '' + lib.optionalString (pkgs.system == "aarch64-darwin") ''
-      extra-platforms = x86_64-darwin aarch64-darwin
+     extra-platforms = x86_64-darwin aarch64-darwin
     '';
   };
 

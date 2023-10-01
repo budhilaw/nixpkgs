@@ -21,17 +21,11 @@ in
   homebrew.global.brewfile = true;
 
   homebrew.taps = [
-    # "homebrew/cask"
-    # "homebrew/cask-drivers"
-    # "homebrew/cask-fonts"
-    # "homebrew/cask-versions"
-    # "homebrew/core"
     "homebrew/services"
-    # "nrlquaker/createzap"
   ];
 
   homebrew.masApps = {
-    Slack = 803453959;
+    # Slack = 803453959;
   };
 
   homebrew.casks = [
@@ -40,7 +34,6 @@ in
     ##############
     "raycast"
     "bitwarden"
-    # "microsoft-edge"
     "google-chrome"
     "shottr"
     "iina"

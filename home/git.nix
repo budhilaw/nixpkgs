@@ -4,13 +4,13 @@ let
   budhilaw = {
     name = "Ericsson Budhilaw";
     email = "ericsson.budhilaw@gmail.com";
-    signingKey = "26DEBED91762BC50";
+    signingKey = "E5F57D91920F01D7";
   };
 
   paper = {
     name = "Ericsson Budhilaw";
     email = "ericsson.budhilaw@paper.id";
-    signingKey = "E290C3025FCF9462";
+    signingKey = "03C696C708A2A369";
   };
 in
 {
