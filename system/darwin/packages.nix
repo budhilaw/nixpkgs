@@ -44,7 +44,7 @@
       
         listen_addresses = ['127.0.0.1:53', '[::1]:53']
       
-        server_names = ['adguard-dns-doh']
+        server_names = ['doh.tiarap.org', 'doh.tiarap.org-ipv6']
       
         max_clients = 250
       

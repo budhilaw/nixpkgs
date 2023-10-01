@@ -39,6 +39,7 @@ in
     "iina"
     "warp"
     "obsidian"
+    "gpg-suite"
     
     ##############
     # Development
@@ -52,7 +53,7 @@ in
     # Productivity
     ##############
     "obs"
-    "notion"
+    # "notion"
     "telegram"
     "appcleaner"
     "logi-options-plus"
