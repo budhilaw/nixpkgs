@@ -99,18 +99,17 @@ in
         direnv hook fish | source
         direnv export fish | source
 
-        # Golang
-        # fish_add_path /${if pkgs.stdenv.isDarwin then "Users" else "home"}/${config.home.username}/Dev/Golang/bin
-        # set -gx GOPATH $HOME/Development/Golang/:$HOME/Development/Paper/Golang
-        # set -gx GOPATH $HOME/Development/Golang/
-        # set -gx GOPRIVATE "github.com/paper-indonesia/*"
-        # set -gx CC /Library/Developer/CommandLineTools/usr/bin/gcc
-
         # Jetbrains
         fish_add_path /${if pkgs.stdenv.isDarwin then "Users" else "home"}/${config.home.username}/Library/Application\ Support/JetBrains/Toolbox/scripts
 
         # brew bin
         fish_add_path /opt/homebrew/bin
+
+        # golang
+        fish_add_path /${if pkgs.stdenv.isDarwin then "Users" else "home"}/${config.home.username}/Dev/Tech/Golang/bin
+
+        # gcloud
+        fish_add_path /${if pkgs.stdenv.isDarwin then "Users" else "home"}/${config.home.username}/Dev/Tech/google-cloud-sdk/bin
 
         # Aliases
         # alias dev="cd $HOME/Dev/"

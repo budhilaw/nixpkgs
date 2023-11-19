@@ -13,7 +13,7 @@
     flake-utils.url = "github:numtide/flake-utils";
 
     # Environment/system management
-    darwin.url = "github:LnL7/nix-darwin";
+    darwin.url = "/Users/budhilaw/.nix-defexpr/darwin";
     darwin.inputs.nixpkgs.follows = "nixpkgs";
 
     # home-manager inputs
@@ -23,6 +23,9 @@
     # pvt
     dvt.url = "github:budhilaw-paper/dvt";
     dvt.inputs.nixpkgs.follows = "nixpkgs";
+
+    # php
+    phps.url = "github:loophp/nix-shell";
 
     # utilities
     precommit.url = "github:cachix/pre-commit-hooks.nix";
@@ -43,6 +46,10 @@
       # Overlays --------------------------------------------------------------------------------{{{
 
       config = { allowUnfree = true; };
+
+      phpOverlays = [
+        inputs.phps.overlays.default
+      ];
 
       overlays =
         {
@@ -82,6 +89,7 @@
       defaultNixpkgs = {
         inherit config;
         overlays = attrValues overlays
+          ++ phpOverlays
           ++ singleton (inputs.dvt.overlay);
       };
 
@@ -109,7 +117,11 @@
           {
             nixpkgs = defaultNixpkgs;
             # Hack to support legacy worklows that use `<nixpkgs>` etc.
-            nix.nixPath = { nixpkgs = "${inputs.nixpkgs}"; };
+            nix.nixPath = {
+              nixpkgs = "${inputs.nixpkgs}";
+              darwin = "$HOME/.nix-defexpr/darwin";
+            };
+
             # `home-manager` config
             users.users.${primaryUser.username} = {
               home = "/Users/${primaryUser.username}";
@@ -144,7 +156,9 @@
           modules = attrValues self.commonModules;
         };
 
-        bootstrap-arm = bootstrap-x86.override { system = "aarch64-darwin"; };
+        bootstrap-arm = bootstrap-x86.override {
+          system = "aarch64-darwin";
+        };
 
         budhilaw = bootstrap-arm.override {
           modules = nixDarwinCommonModules ++ [

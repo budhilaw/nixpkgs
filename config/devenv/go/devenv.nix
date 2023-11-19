@@ -5,12 +5,12 @@
   # https://devenv.sh/packages/
   packages = [ pkgs.git ];
 
-  enterShell = ''
-    export GOBIN=$GOPATH/bin:$HOME/Dev/Golang/bin
-    export GOPATH=$GOPATH:$HOME/Dev/Golang
-    export GOPRIVATE="github.com/paper-indonesia/*"
-    export CC="/Library/Developer/CommandLineTools/usr/bin/gcc"
-  '';
+  # enterShell = ''
+  #   export GOBIN=$GOPATH/bin:$HOME/Dev/Golang/bin
+  #   export GOPATH=$GOPATH:$HOME/Dev/Golang
+  #   export GOPRIVATE="github.com/paper-indonesia/*"
+  #   export CC="/Library/Developer/CommandLineTools/usr/bin/gcc"
+  # '';
 
   # https://devenv.sh/languages/
   languages.nix.enable = true;

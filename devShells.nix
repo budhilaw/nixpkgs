@@ -1,7 +1,10 @@
-{ pkgs, precommit, devenv }:
+{ pkgs, precommit }:
 {
-
-  # `nix develop my`.
+  #
+  #
+  #    $ nix develop github:budhilaw/nixpkgs
+  #
+  #
   default = pkgs.mkShell {
     description = "Budhilaw nixpkgs development environment";
     shellHook = precommit.shellHook or '''';
@@ -9,38 +12,49 @@
     packages = precommit.packages or [ ];
   };
 
-  # go = devenv.lib.mkShell {
-  #   modules = [
-  #     ({ pkgs, ... }: {
-  #       # This is your devenv configuration
-  #       packages = [ pkgs.hello ];
+  php8 = pkgs.mkShell {
+    description = "PHP 8.1";
+    buildInputs = with pkgs; [
+      env-php81
+    ];
+  };
 
-  #       enterShell = ''
-  #         hello
-  #       '';
+  #
+  #
+  #    $ nix develop github:budhilaw/nixpkgs#node18
+  #
+  #
+  node18 = pkgs.mkShell {
+    description = "Node.js 18 Development Environment";
+    buildInputs = with pkgs; [
+      nodejs_18
+      (nodePackages.yarn.override { nodejs = nodejs_18; })
+    ];
+  };
 
-  #       processes.run.exec = "hello";
-  #     })
-  #   ];
-  # };
+  #
+  #
+  #    $ nix develop github:r17x/nixpkgs#pnpm
+  #
+  #
+  pnpm = pkgs.mkShell {
+    description = "Nodejs with PNPM";
 
-  # `nix develop my#go`.
-  # go = pkgs.mkShellNoCC {
-  #   description = "Go Development Environment";
-  #   buildInputs = with pkgs; [
-  #     # Go-lang
-  #     go
-  #     gopls
-  #     gotools
-  #     golangci-lint
+    buildInputs = with pkgs; [
+      nodejs_18
+      (nodePackages.pnpm.override { nodejs = nodejs_18; })
+    ];
+  };
 
-  #     # MariaDB
-  #     mariadb
-  #   ];
+  #
+  #
+  #    $ nix develop github:r17x/nixpkgs#rust-wasm
+  #
+  #
+  rust-wasm = pkgs.mkShell {
+    # declared ENV variables when starting shell
+    RUST_SRC_PATH = "${pkgs.rust.packages.stable.rustPlatform.rustLibSrc}";
 
-  #   shellHook = ''
-  #     ${pkgs.go}/bin/go version
-  #   '';
-  # };
-
+    nativeBuildInputs = with pkgs; [ rustc cargo gcc rustfmt clippy ];
+  };
 }

@@ -25,7 +25,7 @@ in
   ];
 
   homebrew.masApps = {
-    # Slack = 803453959;
+    Slack = 803453959;
   };
 
   homebrew.casks = [
@@ -39,7 +39,6 @@ in
     "iina"
     "warp"
     "obsidian"
-    "gpg-suite"
     
     ##############
     # Development
@@ -53,7 +52,6 @@ in
     # Productivity
     ##############
     "obs"
-    # "notion"
     "telegram"
     "appcleaner"
     "logi-options-plus"

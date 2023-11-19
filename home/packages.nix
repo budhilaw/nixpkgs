@@ -9,7 +9,7 @@
   programs.bat.enable = true;
   programs.bat.config = {
     style = "plain";
-    theme = "TwoDark";
+    theme = "Catppuccin-mocha";
   };
 
   # Direnv, load and unload environment variables depending on the current directory.
@@ -57,9 +57,10 @@
       git
       sops
       cloudflared
-      graphviz
       docker
-      neovim
+      kubectl
+      python3
+      # google-cloud-sdk
 
       ################################## 
       # Shell Integrations
