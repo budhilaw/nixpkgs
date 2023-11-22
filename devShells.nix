@@ -1,27 +1,24 @@
-{ pkgs, precommit }:
+##################################################################
+#                       Development shells
+##################################################################
+{ pkgs, precommit, phps }:
+
 {
   #
   #
-  #    $ nix develop github:budhilaw/nixpkgs
+  #    $ nix develop github:r17x/nixpkgs
   #
   #
   default = pkgs.mkShell {
-    description = "Budhilaw nixpkgs development environment";
+    description = "r17x/nixpkgs development environment";
     shellHook = precommit.shellHook or '''';
     buildInputs = precommit.buildInputs or [ ];
     packages = precommit.packages or [ ];
   };
 
-  php8 = pkgs.mkShell {
-    description = "PHP 8.1";
-    buildInputs = with pkgs; [
-      env-php81
-    ];
-  };
-
   #
   #
-  #    $ nix develop github:budhilaw/nixpkgs#node18
+  #    $ nix develop github:r17x/nixpkgs#node18
   #
   #
   node18 = pkgs.mkShell {

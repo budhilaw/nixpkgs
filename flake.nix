@@ -24,8 +24,8 @@
     dvt.url = "github:budhilaw-paper/dvt";
     dvt.inputs.nixpkgs.follows = "nixpkgs";
 
-    # php
-    phps.url = "github:loophp/nix-shell";
+    # phps
+    phps.url = "github:fossar/nix-phps";
 
     # utilities
     precommit.url = "github:cachix/pre-commit-hooks.nix";
@@ -37,6 +37,7 @@
     , darwin
     , home-manager
     , flake-utils
+    , phps
     , ...
     } @inputs:
 
@@ -46,10 +47,6 @@
       # Overlays --------------------------------------------------------------------------------{{{
 
       config = { allowUnfree = true; };
-
-      phpOverlays = [
-        inputs.phps.overlays.default
-      ];
 
       overlays =
         {
@@ -89,7 +86,6 @@
       defaultNixpkgs = {
         inherit config;
         overlays = attrValues overlays
-          ++ phpOverlays
           ++ singleton (inputs.dvt.overlay);
       };
 
@@ -259,6 +255,7 @@
       devShells = import ./devShells.nix {
         pkgs = self.legacyPackages.${system};
         precommit = checks.pre-commit-check;
+        phps = phps;
       };
 
       # }}}
