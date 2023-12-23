@@ -34,9 +34,9 @@ in
         insteadOf = "https://github.com/paper-indonesia";
       };
       # for go mod
-      "git@github.com:paper-indonesia" = {
-        insteadOf = "https://github.com/paper-indonesia";
-      };
+      # "git@github.com:paper-indonesia" = {
+      #   insteadOf = "https://github.com/paper-indonesia/";
+      # };
       "git@gitlab.com:" = {
         insteadOf = "https://gitlab.com/";
       };

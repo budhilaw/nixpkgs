@@ -38,7 +38,8 @@ in
     "shottr"
     "iina"
     "warp"
-    "obsidian"
+    "notion"
+    "hiddenbar"
     
     ##############
     # Development
@@ -70,5 +71,6 @@ in
     "golang-migrate"
     "p7zip"
     "unar"
+    "mkcert"
   ];
 }

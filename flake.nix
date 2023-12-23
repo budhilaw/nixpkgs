@@ -13,7 +13,7 @@
     flake-utils.url = "github:numtide/flake-utils";
 
     # Environment/system management
-    darwin.url = "/Users/budhilaw/.nix-defexpr/darwin";
+    darwin.url = "github:LnL7/nix-darwin";
     darwin.inputs.nixpkgs.follows = "nixpkgs";
 
     # home-manager inputs
@@ -195,6 +195,7 @@
         home-shells = import ./home/shells.nix;
         home-ssh = import ./home/ssh.nix;
         home-git = import ./home/git.nix;
+        home-app = import ./home/application.nix;
 
         home-user-info = { lib, ... }: {
           options.home.user-info =
