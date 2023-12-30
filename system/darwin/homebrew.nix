@@ -40,6 +40,7 @@ in
     "warp"
     "notion"
     "hiddenbar"
+    "iterm2"
     
     ##############
     # Development

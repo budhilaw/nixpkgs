@@ -3,9 +3,9 @@
 
   inputs = {
     # Package sets
-    nixpkgs.url = "github:NixOS/nixpkgs/release-23.05";
+    nixpkgs.url = "github:NixOS/nixpkgs/release-23.11";
     nixpkgs-master.url = "github:NixOS/nixpkgs/master";
-    nixpkgs-stable.url = "github:NixOS/nixpkgs/nixpkgs-23.05-darwin";
+    nixpkgs-stable.url = "github:NixOS/nixpkgs/nixpkgs-23.11-darwin";
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
 
     # Flake utilities
@@ -17,7 +17,7 @@
     darwin.inputs.nixpkgs.follows = "nixpkgs";
 
     # home-manager inputs
-    home-manager.url = "github:nix-community/home-manager/release-23.05";
+    home-manager.url = "github:nix-community/home-manager/release-23.11";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
     # pvt
@@ -90,7 +90,7 @@
       };
 
       # Personal configuration shared between `nix-darwin` and plain `home-manager` configs.
-      homeManagerStateVersion = "23.05";
+      homeManagerStateVersion = "23.11";
 
       primaryUserInfo = rec {
         username = "budhilaw";

@@ -48,8 +48,7 @@
       fd
       wget
       curl
-      exa
-      # iterm2
+      eza
       (google-cloud-sdk.withExtraComponents [google-cloud-sdk.components.gke-gcloud-auth-plugin])
 
       ################################## 
