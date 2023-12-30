@@ -24,9 +24,6 @@
     dvt.url = "github:budhilaw-paper/dvt";
     dvt.inputs.nixpkgs.follows = "nixpkgs";
 
-    # phps
-    phps.url = "github:fossar/nix-phps";
-
     # utilities
     precommit.url = "github:cachix/pre-commit-hooks.nix";
     precommit.inputs.nixpkgs.follows = "nixpkgs";
@@ -37,7 +34,6 @@
     , darwin
     , home-manager
     , flake-utils
-    , phps
     , ...
     } @inputs:
 
@@ -256,7 +252,6 @@
       devShells = import ./devShells.nix {
         pkgs = self.legacyPackages.${system};
         precommit = checks.pre-commit-check;
-        phps = phps;
       };
 
       # }}}
