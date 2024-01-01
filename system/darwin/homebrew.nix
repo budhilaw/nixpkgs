@@ -62,6 +62,7 @@ in
     "calibre"
     "arc"
     "publish-or-perish"
+    "plantuml"
   ];
 
   homebrew.brews = [

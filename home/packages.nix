@@ -49,7 +49,7 @@
       wget
       curl
       eza
-      (google-cloud-sdk.withExtraComponents [google-cloud-sdk.components.gke-gcloud-auth-plugin])
+      graphviz
 
       ################################## 
       # Development
@@ -61,7 +61,8 @@
       docker
       kubectl
       python3
-      # google-cloud-sdk
+      zulu
+      (google-cloud-sdk.withExtraComponents [google-cloud-sdk.components.gke-gcloud-auth-plugin])
 
       ################################## 
       # Shell Integrations
