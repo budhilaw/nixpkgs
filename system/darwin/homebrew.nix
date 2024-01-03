@@ -26,6 +26,7 @@ in
 
   homebrew.masApps = {
     Slack = 803453959;
+    Dropover = 1355679052;
   };
 
   homebrew.casks = [
@@ -62,6 +63,7 @@ in
     "calibre"
     "arc"
     "publish-or-perish"
+    "orion"
   ];
 
   homebrew.brews = [
