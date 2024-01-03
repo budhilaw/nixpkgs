@@ -62,7 +62,6 @@ in
     "calibre"
     "arc"
     "publish-or-perish"
-    "plantuml"
   ];
 
   homebrew.brews = [
@@ -74,5 +73,6 @@ in
     "p7zip"
     "unar"
     "mkcert"
+    "plantuml"
   ];
 }
