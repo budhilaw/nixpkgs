@@ -22,11 +22,13 @@ in
 
   homebrew.taps = [
     "homebrew/services"
+    "hcavarsan/kftray"
   ];
 
   homebrew.masApps = {
     Slack = 803453959;
     Dropover = 1355679052;
+    CopyClip = 595191960;
   };
 
   homebrew.casks = [
@@ -64,6 +66,7 @@ in
     "arc"
     "publish-or-perish"
     "orion"
+    "imageoptim"
   ];
 
   homebrew.brews = [
@@ -76,5 +79,8 @@ in
     "unar"
     "mkcert"
     "plantuml"
+    "sonar-scanner"
+    "kftray"
+    "ffmpeg"
   ];
 }
