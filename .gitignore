@@ -6,6 +6,8 @@ result
 # Edit at https://www.toptal.com/developers/gitignore?templates=osx
 
 ### OSX ###
+.idea
+
 # General
 .DS_Store
 .AppleDouble
