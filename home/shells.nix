@@ -95,10 +95,6 @@ in
         set -U fish_color_param 6CB6EB
         set fish_greeting
 
-        # direnv
-        direnv hook fish | source
-        direnv export fish | source
-
         # Jetbrains
         fish_add_path /${if pkgs.stdenv.isDarwin then "Users" else "home"}/${config.home.username}/Library/Application\ Support/JetBrains/Toolbox/scripts
 
@@ -107,17 +103,23 @@ in
 
         # golang
         fish_add_path /${if pkgs.stdenv.isDarwin then "Users" else "home"}/${config.home.username}/Dev/Tech/Golang/bin
+        set -Ux GOPATH /${if pkgs.stdenv.isDarwin then "Users" else "home"}/${config.home.username}/Dev/Tech/Golang/
+        set -Ux GOBIN /${if pkgs.stdenv.isDarwin then "Users" else "home"}/${config.home.username}/Dev/Tech/Golang/bin
+        set -Ux GOPRIVATE github.com/paper-indonesia/*
 
         # gcloud
         fish_add_path /${if pkgs.stdenv.isDarwin then "Users" else "home"}/${config.home.username}/Dev/Tech/google-cloud-sdk/bin
 
+        # warp
+        set -Ux WARP_THEMES_DIR $HOME/.warp/themes
+
         # Aliases
-        # alias dev="cd $HOME/Dev/"
-        # alias personaldev="cd $HOME/Dev/Personal"
-        # alias paperdev="cd $HOME/Dev/Paper"
-        # alias nixdir="cd ~/.config/nixpkgs"
-        # alias di="devenv init"
-        # alias ds="devenv shell -c $SHELL"
+        alias dev="cd $HOME/Dev/"
+        alias personaldev="cd $HOME/Dev/Personal"
+        alias paperdev="cd $HOME/Dev/Paper"
+        alias nixdir="cd ~/.config/nixpkgs"
+        alias di="devenv init"
+        alias ds="devenv shell -c $SHELL"
       '';
     };
 

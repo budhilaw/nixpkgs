@@ -22,7 +22,6 @@ in
 
   homebrew.taps = [
     "homebrew/services"
-    "hcavarsan/kftray"
   ];
 
   homebrew.masApps = {
@@ -37,11 +36,9 @@ in
     ##############
     "raycast"
     "bitwarden"
-    "google-chrome"
     "shottr"
     "iina"
     "warp"
-    "notion"
     "hiddenbar"
     "iterm2"
     
@@ -65,7 +62,6 @@ in
     "calibre"
     "arc"
     "publish-or-perish"
-    "orion"
     "imageoptim"
   ];
 
@@ -77,10 +73,8 @@ in
     "golang-migrate"
     "p7zip"
     "unar"
-    "mkcert"
     "plantuml"
     "sonar-scanner"
-    "kftray"
     "ffmpeg"
   ];
 }

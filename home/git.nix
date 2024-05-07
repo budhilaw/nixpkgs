@@ -21,7 +21,7 @@ in
   ];
 
   programs.git.extraConfig = {
-    # gpg.program = "gpg";
+    gpg.program = "gpg";
     rerere.enable = true;
     commit.gpgSign = true;
     pull.ff = "only";
@@ -30,12 +30,8 @@ in
     merge.tool = "code";
     url = {
       # for go mod
-      "git@github.com-paper:paper-indonesia" = {
-        insteadOf = "https://github.com/paper-indonesia";
-      };
-      # for go mod
-      # "git@github.com:paper-indonesia" = {
-      #   insteadOf = "https://github.com/paper-indonesia/";
+      # "git@github.com-paper:paper-indonesia" = {
+      #   insteadOf = "https://github.com/paper-indonesia";
       # };
       "git@gitlab.com:" = {
         insteadOf = "https://gitlab.com/";
@@ -48,25 +44,16 @@ in
 
   programs.git.includes = [
     {
-      condition = "gitdir:~/Dev/Personal/";
+      condition = "gitdir:~/Personal/";
       contents.user = budhilaw;
-      contents.commit = {
-        gpgSign = true;
-      };
     }
     {
-      condition = "gitdir:~/Dev/Paper/";
+      condition = "gitdir:~/Paper/";
       contents.user = paper;
-      contents.commit = {
-        gpgSign = true;
-      };
     }
     {
       condition = "gitdir:~/.config/nixpkgs/";
       contents.user = budhilaw;
-      contents.commit = {
-        gpgSign = true;
-      };
     }
   ];
 
