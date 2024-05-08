@@ -49,6 +49,7 @@ in
     "visual-studio-code"
     "orbstack"
     "postman"
+    "sequel-ace"
 
     ##############
     # Productivity

@@ -105,7 +105,7 @@ in
         fish_add_path /${if pkgs.stdenv.isDarwin then "Users" else "home"}/${config.home.username}/Dev/Tech/Golang/bin
         set -Ux GOPATH /${if pkgs.stdenv.isDarwin then "Users" else "home"}/${config.home.username}/Dev/Tech/Golang/
         set -Ux GOBIN /${if pkgs.stdenv.isDarwin then "Users" else "home"}/${config.home.username}/Dev/Tech/Golang/bin
-        set -Ux GOPRIVATE github.com/paper-indonesia/*
+        set -Ux GOPRIVATE "github.com/paper-indonesia/*"
 
         # gcloud
         fish_add_path /${if pkgs.stdenv.isDarwin then "Users" else "home"}/${config.home.username}/Dev/Tech/google-cloud-sdk/bin
