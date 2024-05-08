@@ -29,12 +29,11 @@ in
     difftool.prompt = false;
     merge.tool = "code";
     url = {
-      # for go mod
-      # "git@github.com-paper:paper-indonesia" = {
-      #   insteadOf = "https://github.com/paper-indonesia";
-      # };
-      "git@gitlab.com:" = {
-        insteadOf = "https://gitlab.com/";
+      "git@github.com-paper:paper-indonesia" = {
+        insteadOf = "https://github.com/paper-indonesia";
+      };
+      "git@github.com:paper-indonesia" = {
+        insteadOf = "https://github.com/paper-indonesia";
       };
       "git@github.com:" = {
         insteadOf = "https://github.com/";
@@ -44,17 +43,36 @@ in
 
   programs.git.includes = [
     {
-      condition = "gitdir:~/Personal/";
+      condition = "gitdir:~/Dev/Personal/";
       contents.user = budhilaw;
+      contents.core = {
+        sshCommand = "ssh -i ~/.ssh/id_ed25519_personal";
+      };
     }
     {
-      condition = "gitdir:~/Paper/";
+      condition = "gitdir:~/Dev/Paper/";
       contents.user = paper;
+      contents.core = {
+        sshCommand = "ssh -i ~/.ssh/id_ed25519_work";
+      };
+      # condition = "hasconfig:remote.*.url:git@github.com-paper:paper-indonesia/*";
     }
     {
       condition = "gitdir:~/.config/nixpkgs/";
       contents.user = budhilaw;
+      contents.core = {
+        sshCommand = "ssh -i ~/.ssh/id_ed25519_personal";
+      };
     }
+    # {
+    #   contents = {
+    #     user = paper;
+    #     core = {
+    #       sshCommand = "ssh -i ~/.ssh/id_ed25519_work";
+    #     };
+    #   };
+    #   condition = "hasconfig:remote.*.url:git@github.com:paper-indonesia/*";
+    # }
   ];
 
   ### git tools
