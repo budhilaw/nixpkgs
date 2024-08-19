@@ -4,8 +4,10 @@
   imports = [
     ./nixosModules
     ./hosts
+    ./home
 
     ./devShells.nix
+    ./overlays
   ];
 
   perSystem =

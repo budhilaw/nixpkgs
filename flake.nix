@@ -41,6 +41,11 @@
     # utilities
     pre-commit-hooks.url = "github:cachix/pre-commit-hooks.nix";
     pre-commit-hooks.inputs.nixpkgs.follows = "nixpkgs";
+
+    nix-env = {
+      url = "github:lilyball/nix-env.fish";
+      flake = false;
+    };
   };
 }
 
