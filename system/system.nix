@@ -1,14 +1,34 @@
 { pkgs, lib, ... }:
+
+let
+  # nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
+in
 {
+  # inherit nixPath;
+
   # https://github.com/nix-community/home-manager/issues/423
-  programs.nix-index.enable = true;
+  # programs.nix-index.enable = true;
   # Nix configuration ------------------------------------------------------------------------------
 
   # Bootstrap
   nix = {
+    # nix-path = nixPath;
     configureBuildUsers = true;
     settings = {
       auto-optimise-store = true;
+      accept-flake-config = true;
+      builders-use-substitutes = false;
+      download-attempts = 3;
+      fallback = true;
+      http-connections = 0;
+      max-jobs = "auto";
+
+      experimental-features = [
+        "auto-allocate-uids"
+        "ca-derivations"
+        "flakes"
+        "nix-command"
+      ];
 
       trusted-users = [
         "@admin"
@@ -28,6 +48,9 @@
         "devenv.cachix.org-1:w1cLUi8dv3hnoSPGAuibQv+f9TZLr6cv/Hm9XgU50cw="
       ];
     };
+    # // (lib.optionalAttrs (stdenv.isDarwin && stdenv.isAarch64) {
+    #   extra-platforms = "x86_64-darwin aarch64-darwin";
+    # });
 
 
     # enable garbage-collection on weekly and delete-older-than 30 day
@@ -39,11 +62,9 @@
     # this is configuration for /etc/nix/nix.conf
     # so it will generated /etc/nix/nix.conf
     extraOptions = ''
-     experimental-features = nix-command flakes
      keep-outputs = true
      keep-derivations = true
-    '' + lib.optionalString (pkgs.system == "aarch64-darwin") ''
-     extra-platforms = x86_64-darwin aarch64-darwin
+      auto-allocate-uids = false
     '';
   };
 

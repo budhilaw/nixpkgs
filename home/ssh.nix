@@ -6,6 +6,7 @@ in
 {
   programs.ssh = {
     enable = true;
+    addKeysToAgent = "yes";
     matchBlocks = {
       # Personal
       "github.com" = {
@@ -21,5 +22,8 @@ in
         identityFile = "~/.ssh/id_ed25519_work";
       };
     };
+    extraConfig = ''
+      UseKeychain yes
+    '';
   };
 }

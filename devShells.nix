@@ -19,6 +19,15 @@
     ];
   };
 
+  go = pkgs.mkShell {
+    description = "Go Development Environment";
+    nativeBuildInputs = [ pkgs.go ];
+    shellHook = ''
+      export GOPATH="$(${pkgs.go}/bin/go env GOPATH)"
+      export PATH="$PATH:$GOPATH/bin"
+    '';
+  };
+
   pnpm = pkgs.mkShell {
     description = "Nodejs with PNPM";
 

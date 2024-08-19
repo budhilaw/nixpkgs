@@ -79,6 +79,10 @@ in
   };
 
   programs = {
+    # command-not-found integration
+    nix-index.enableFishIntegration = config.programs.fish.enable;
+    nix-index.enableBashIntegration = config.programs.bash.enable;
+
     # jump like `z` or `fasd` 
     dircolors.enable = true;
     # Fish Shell (Default shell)
@@ -102,9 +106,9 @@ in
         fish_add_path /opt/homebrew/bin
 
         # golang
-        fish_add_path /${if pkgs.stdenv.isDarwin then "Users" else "home"}/${config.home.username}/Dev/Tech/Golang/bin
-        set -Ux GOPATH /${if pkgs.stdenv.isDarwin then "Users" else "home"}/${config.home.username}/Dev/Tech/Golang/
-        set -Ux GOBIN /${if pkgs.stdenv.isDarwin then "Users" else "home"}/${config.home.username}/Dev/Tech/Golang/bin
+        # fish_add_path /${if pkgs.stdenv.isDarwin then "Users" else "home"}/${config.home.username}/Dev/Tech/Golang/bin
+        # set -Ux GOPATH /${if pkgs.stdenv.isDarwin then "Users" else "home"}/${config.home.username}/Dev/Tech/Golang/
+        # set -Ux GOBIN /${if pkgs.stdenv.isDarwin then "Users" else "home"}/${config.home.username}/Dev/Tech/Golang/bin
         set -Ux GOPRIVATE "github.com/paper-indonesia/*"
 
         # gcloud

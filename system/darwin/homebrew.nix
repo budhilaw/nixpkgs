@@ -26,7 +26,6 @@ in
 
   homebrew.masApps = {
     Slack = 803453959;
-    Dropover = 1355679052;
     CopyClip = 595191960;
   };
 
@@ -35,10 +34,8 @@ in
     # Misc
     ##############
     "raycast"
-    "bitwarden"
     "shottr"
     "iina"
-    "warp"
     "hiddenbar"
     "iterm2"
     
@@ -49,7 +46,6 @@ in
     "visual-studio-code"
     "orbstack"
     "postman"
-    "sequel-ace"
 
     ##############
     # Productivity
@@ -58,12 +54,12 @@ in
     "telegram"
     "appcleaner"
     "logi-options-plus"
-    "pritunl"
-    "keka"
     "calibre"
     "arc"
     "publish-or-perish"
-    "imageoptim"
+    "coconutbattery"
+    "1password"
+    "1password-cli"
   ];
 
   homebrew.brews = [
@@ -72,10 +68,6 @@ in
     ##############
     "mockery"
     "golang-migrate"
-    "p7zip"
-    "unar"
-    "plantuml"
-    "sonar-scanner"
     "ffmpeg"
   ];
 }

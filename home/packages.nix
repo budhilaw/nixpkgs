@@ -2,6 +2,9 @@
 
 {
   # Packages with configuration --------------------------------------------------------------- {{{
+  programs.home-manager.enable = true;
+
+  programs.nix-index.enable = true;
 
   # Bat, a substitute for cat.
   # https://github.com/sharkdp/bat
@@ -9,7 +12,7 @@
   programs.bat.enable = true;
   programs.bat.config = {
     style = "plain";
-    theme = "Catppuccin-mocha";
+    theme = "Catppuccin Frappe";
   };
 
   # Direnv, load and unload environment variables depending on the current directory.
@@ -39,9 +42,8 @@
       ################################## 
       # Productivity
       ##################################
-      neofetch # fancy fetch information
+      # neofetch # fancy fetch information
       lsd
-      ncdu
       htop
       tldr
       jq
@@ -49,7 +51,6 @@
       wget
       curl
       eza
-      graphviz
 
       ################################## 
       # Development
@@ -78,8 +79,7 @@
       # Useful Nix related tools
       ################################## 
       cachix
-      rnix-lsp
-      home-manager
+      # home-manager
       nix-prefetch-git
       dvt
     ] ++ lib.optionals

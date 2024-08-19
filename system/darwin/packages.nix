@@ -10,19 +10,21 @@
   environment.systemPackages = with pkgs; [
     dnscrypt-proxy2
     terminal-notifier
+    devenv
+    
     darwin.cf-private
     darwin.apple_sdk.frameworks.CoreServices
-    libiconv
-    stdenv
+    # libiconv
+    # stdenv
   ];
 
   # Fonts
   # ENABLED when fontrestore issue in monterey is solved
-  fonts.fontDir.enable = true;
-  fonts.fonts = with pkgs; [
-    recursive
-    (nerdfonts.override { fonts = [ "JetBrainsMono" "FiraCode" "Hack" ]; })
-  ];
+  # fonts.fontDir.enable = true;
+  # fonts.fonts = with pkgs; [
+  #   recursive
+  #   (nerdfonts.override { fonts = [ "JetBrainsMono" "FiraCode" "Hack" ]; })
+  # ];
 
   # Networks
   # dnscrypt-proxy
