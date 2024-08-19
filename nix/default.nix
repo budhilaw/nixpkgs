@@ -2,6 +2,7 @@
 
 {
   imports = [
+    ./nixosModules
     ./hosts
 
     ./devShells.nix
