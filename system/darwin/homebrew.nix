@@ -37,7 +37,6 @@ in
     "shottr"
     "iina"
     "hiddenbar"
-    "iterm2"
     
     ##############
     # Development

@@ -66,7 +66,7 @@ let
                   home.username = user.username;
                   home.packages = [
                     # pkgs.sops
-                    self.packages.${system}.nvim
+                    # self.packages.${system}.nvim
                     config.nix.package
                   ];
                   # sops.gnupg.home = "~/.gnupg";

@@ -28,14 +28,51 @@ in
   homebrew.onActivation.cleanup = "zap";
   homebrew.global.brewfile = true;
 
+  homebrew.taps = [
+    "homebrew/services"
+  ];
+
   homebrew.masApps = {
-    Vimari = 1480933944;
+    Slack = 803453959;
+    CopyClip = 595191960;
     WhatsApp = 310633997;
   };
 
   homebrew.casks = [
-    # "raycast"
-    # "sf-symbols"
+    ##############
+    # Misc
+    ##############
+    "shottr"
+    "iina"
+    "hiddenbar"
+    
+    ##############
+    # Development
+    ##############
+    "jetbrains-toolbox"
+    "visual-studio-code"
+    "orbstack"
+    "postman"
+
+    ##############
+    # Productivity
+    ##############
+    "obs"
+    "telegram"
+    "appcleaner"
+    "logi-options-plus"
+    "calibre"
+    "arc"
+    "publish-or-perish"
+  ];
+
+  homebrew.brews = [
+    ##############
+    # Development
+    ##############
+    "mockery"
+    "golang-migrate"
+    "ffmpeg"
   ];
 
 }

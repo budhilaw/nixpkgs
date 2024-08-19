@@ -76,7 +76,6 @@ in
       cachix
       # home-manager
       nix-prefetch-git
-      dvt
     ] ++ lib.optionals
       stdenv.isDarwin
       [
