@@ -20,6 +20,6 @@
   system.defaults.trackpad.TrackpadThreeFingerDrag = false;
   # Keyboard
   system.keyboard.enableKeyMapping = true;
-  system.keyboard.remapCapsLockToEscape = true;
+  # system.keyboard.remapCapsLockToEscape = true;
 
 }

@@ -64,6 +64,8 @@ in
     "calibre"
     "arc"
     "publish-or-perish"
+    "1password"
+    "1password-cli"
   ];
 
   homebrew.brews = [

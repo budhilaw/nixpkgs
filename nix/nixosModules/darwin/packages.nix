@@ -10,8 +10,8 @@
     raycast
     iterm2
     terminal-notifier
-    _1password-gui
-    _1password
+    # _1password-gui
+    # _1password
   ];
 
   # Fonts
