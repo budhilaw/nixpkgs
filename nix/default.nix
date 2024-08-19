@@ -2,6 +2,8 @@
 
 {
   imports = [
+    ./hosts
+
     ./devShells.nix
   ];
 
