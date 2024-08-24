@@ -29,15 +29,15 @@ in
     difftool.prompt = false;
     merge.tool = "code";
     url = {
-      "git@github.com-paper:paper-indonesia" = {
-        insteadOf = "https://github.com/paper-indonesia";
-      };
-      "git@github.com:paper-indonesia" = {
-        insteadOf = "https://github.com/paper-indonesia";
-      };
       "git@github.com:" = {
         insteadOf = "https://github.com/";
       };
+      "git@github.com-paper:" = {
+        insteadOf = "https://github.com/paper-indonesia";
+      };
+      # "git@github.com:paper-indonesia" = {
+      #   insteadOf = "https://github.com/paper-indonesia";
+      # };
     };
   };
 
@@ -58,7 +58,7 @@ in
       # condition = "hasconfig:remote.*.url:git@github.com-paper:paper-indonesia/*";
     }
     {
-      condition = "gitdir:~/.config/nixpkgs/";
+      condition = "gitdir:~/.config/nixverse/";
       contents.user = budhilaw;
       contents.core = {
         sshCommand = "ssh -i ~/.ssh/id_ed25519_personal";

@@ -33,7 +33,7 @@ in
     ##############
     # Misc
     ##############
-    "raycast"
+    # "raycast"
     "shottr"
     "iina"
     "hiddenbar"
@@ -52,7 +52,6 @@ in
     "obs"
     "telegram"
     "appcleaner"
-    "logi-options-plus"
     "calibre"
     "arc"
     "publish-or-perish"

@@ -51,14 +51,22 @@ in
       # Development
       ##################################
       neovim
+      vscode
+      postman
       pkg-config
       git
       sops
-      cloudflared
+      # cloudflared
       docker
       kubectl
-      python3
       (google-cloud-sdk.withExtraComponents [google-cloud-sdk.components.gke-gcloud-auth-plugin])
+
+      ################################## 
+      # Programming Stuff
+      ##################################
+      python3
+      go-mockery
+      go-migrate
 
       ################################## 
       # Shell Integrations
@@ -68,13 +76,19 @@ in
       ################################## 
       # Misc
       ################################## 
+      gnupg
       openssl
+      raycast
+      arc-browser
+      iina
+      hidden-bar
+      appcleaner
+      ffmpeg
 
       ################################## 
       # Useful Nix related tools
       ################################## 
       cachix
-      # home-manager
       nix-prefetch-git
     ] ++ lib.optionals
       stdenv.isDarwin

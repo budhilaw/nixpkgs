@@ -43,38 +43,24 @@ in
     # Misc
     ##############
     "shottr"
-    "iina"
-    "hiddenbar"
+    "calibre"
     
     ##############
     # Development
     ##############
     "jetbrains-toolbox"
-    "visual-studio-code"
-    "orbstack"
-    "postman"
+    # "orbstack"
 
     ##############
     # Productivity
     ##############
-    "obs"
-    "telegram"
-    "appcleaner"
-    "logi-options-plus"
-    "calibre"
-    "arc"
     "publish-or-perish"
-    "1password"
-    "1password-cli"
+    # "1password"
+    # "1password-cli"
   ];
 
   homebrew.brews = [
-    ##############
-    # Development
-    ##############
-    "mockery"
-    "golang-migrate"
-    "ffmpeg"
+    # None
   ];
 
 }
