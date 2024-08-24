@@ -56,8 +56,6 @@ in
     "arc"
     "publish-or-perish"
     "coconutbattery"
-    "1password"
-    "1password-cli"
   ];
 
   homebrew.brews = [

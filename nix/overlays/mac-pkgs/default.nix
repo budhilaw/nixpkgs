@@ -9,7 +9,7 @@
         "obs-studio"
         "orbstack"
         "telegram"
-        "_1password"
+        # "_1password"
       ];
     in
 

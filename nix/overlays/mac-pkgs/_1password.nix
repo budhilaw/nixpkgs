@@ -1,106 +1,73 @@
-# SPDX-License-Identifier: MIT
-
-# Based on:
-# https://github.com/NixOS/nixpkgs/blob/nixos-unstable/nixos/modules/programs/_1password.nix
-# https://github.com/NixOS/nixpkgs/blob/nixos-unstable/nixos/modules/programs/_1password-gui.nix
-
 {
-  config,
   lib,
-  pkgs,
-  ...
+  stdenv,
+  fetchurl,
+  undmg,
 }:
 
 let
-  inherit (lib) types;
+  inherit (stdenv.hostPlatform) system;
+  throwSystem = throw "Unsupported system: ${system}";
 
-  cfg-cli = config.programs._1password;
-  cfg-gui = config.programs._1password-gui;
-in
-{
-  options.programs = {
-    _1password = {
-      enable = lib.mkEnableOption "Whether to enable the 1Password CLI tool.";
-      copyToUsrLocal = lib.mkOption {
-        description = "Copy `op` to `/usr/local/bin`. This is required to share authentication with the desktop app.";
-        type = types.bool;
-        default = true;
+  pname = "_1password";
+
+  # see version history https://desktop.telegram.org/changelog
+  version =
+    rec {
+      aarch64-darwin = "8.10.40";
+      x86_64-darwin = aarch64-darwin;
+    }
+    .${system} or throwSystem;
+
+  # sha256 =
+  #   rec {
+  #     aarch64-darwin = "sha256-g6Cm3bMq8nVPf2On94yNYmKdfnCyxaEsnVbsJYBaVZs";
+  #     x86_64-darwin = aarch64-darwin;
+  #   }
+  #   .${system} or throwSystem;
+
+  srcs =
+    let
+      base = "https://downloads.1password.com/mac";
+    in
+    rec {
+      aarch64-darwin = {
+        url = "${base}/1Password.pkg";
+        # sha256 = sha256;
       };
-      package = lib.mkOption {
-        description = "The 1Password CLI package to use.";
-        type = types.package;
-        default = pkgs._1password;
-      };
+      x86_64-darwin = aarch64-darwin;
     };
-    _1password-gui = {
-      enable = lib.mkEnableOption "Whether to enable the 1Password GUI application.";
-      copyToApplications = lib.mkOption {
-        description = "Copy `1Password.app` to `/Applications`. This is required to share authentication with extensions and the CLI tool.";
-        type = types.bool;
-        default = true;
-      };
-      package = lib.mkOption {
-        description = "The 1Password CLI package to use.";
-        type = types.package;
-        default = pkgs._1password-gui;
-      };
-    };
+
+  src = fetchurl (srcs.${system} or throwSystem);
+
+  meta = with lib; {
+    description = "1Password";
+    homepage = "https://1password.com/";
+    # license = licenses.gpl3Only;
+    platforms = [
+      "x86_64-darwin"
+      "aarch64-darwin"
+    ];
   };
 
-  config =
-    let
-      _1password-cli-package = cfg-cli.package.overrideAttrs (old: {
-        meta = old.meta // {
-          broken = false;
-        };
-      });
+  darwin = stdenv.mkDerivation {
+    inherit
+      pname
+      version
+      src
+      meta
+      ;
 
-      _1password-cli-cfg = lib.mkIf cfg-cli.enable {
-        environment.systemPackages = lib.optional (!cfg-cli.copyToUsrLocal) _1password-cli-package;
+    nativeBuildInputs = [ undmg ];
 
-        system.activationScripts.postActivation.text = lib.optionalString cfg-cli.copyToUsrLocal ''
-          install -o root -g wheel -m0555 -D \
-            ${lib.getBin _1password-cli-package}/bin/op /usr/local/bin/op
-        '';
-      };
+    sourceRoot = "1Password.app";
 
-      _1password-gui-package = cfg-gui.package.overrideAttrs (old: {
-        meta = old.meta // {
-          broken = false;
-        };
-      });
-
-      _1password-gui-cfg = lib.mkIf cfg-gui.enable {
-        environment.systemPackages = lib.optional (!cfg-gui.copyToApplications) _1password-gui-package;
-
-        system.activationScripts.postActivation.text = lib.optionalString cfg-gui.copyToApplications ''
-          appsDir="/Applications/Nix Apps"
-          if [ -d "$appsDir" ]; then
-            rm -rf "$appsDir/1Password.app"
-          fi
-
-          app="/Applications/1Password.app"
-          if [ -L "$app" ] || [ -f "$app"  ]; then
-            rm "$app"
-          fi
-          install -o root -g wheel -m0555 -d "$app"
-
-          rsyncFlags=(
-            --archive
-            --checksum
-            --chmod=-w
-            --copy-unsafe-links
-            --delete
-            --no-group
-            --no-owner
-          )
-          ${lib.getBin pkgs.rsync}/bin/rsync "''${rsyncFlags[@]}" \
-            ${_1password-gui-package}/Applications/1Password.app/ /Applications/1Password.app
-        '';
-      };
-    in
-    lib.mkMerge [
-      _1password-cli-cfg
-      _1password-gui-cfg
-    ];
-}
+    installPhase = ''
+      runHook preInstall
+      mkdir -p $out/Applications/1Password.app
+      cp -R . $out/Applications/1Password.app
+      runHook postInstall
+    '';
+  };
+in
+darwin
