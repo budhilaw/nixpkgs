@@ -12,7 +12,7 @@
   programs.bat.enable = true;
   programs.bat.config = {
     style = "plain";
-    theme = "Catppuccin Frappe";
+    theme = "catppuccin-frappe";
   };
 
   # Direnv, load and unload environment variables depending on the current directory.

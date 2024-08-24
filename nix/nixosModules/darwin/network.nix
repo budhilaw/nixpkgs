@@ -10,6 +10,7 @@
     dnscrypt-proxy2
   ];
 
+
   # dnscrypt-proxy
   launchd.daemons.dnscrypt-proxy = {
     path = [ config.environment.systemPath ];
