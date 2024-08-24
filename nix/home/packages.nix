@@ -59,6 +59,7 @@ in
       # cloudflared
       docker
       kubectl
+      orbstack
       (google-cloud-sdk.withExtraComponents [google-cloud-sdk.components.gke-gcloud-auth-plugin])
 
       ################################## 
@@ -84,6 +85,9 @@ in
       hidden-bar
       appcleaner
       ffmpeg
+      obs-studio
+      _1password
+      telegram
 
       ################################## 
       # Useful Nix related tools
