@@ -48,6 +48,7 @@ in
     # Productivity
     ##############
     "publish-or-perish"
+    "calibre"
     "1password"
     "1password-cli"
   ];

@@ -88,7 +88,6 @@ in
       obs-studio
       telegram
       shottr
-      calibre
 
       ################################## 
       # Useful Nix related tools
