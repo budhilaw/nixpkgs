@@ -11,7 +11,7 @@
         "telegram"
         "shottr"
         "calibre"
-        "publish-or-perish"
+        # "publish-or-perish"
       ];
     in
 

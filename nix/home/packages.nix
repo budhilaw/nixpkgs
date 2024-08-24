@@ -89,7 +89,6 @@ in
       telegram
       shottr
       calibre
-      publish-or-perish
 
       ################################## 
       # Useful Nix related tools
