@@ -86,8 +86,8 @@ in
       appcleaner
       ffmpeg
       obs-studio
-      _1password
       telegram
+      shottr
 
       ################################## 
       # Useful Nix related tools

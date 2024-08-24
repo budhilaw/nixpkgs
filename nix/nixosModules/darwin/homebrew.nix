@@ -42,21 +42,20 @@ in
     ##############
     # Misc
     ##############
-    "shottr"
+    # "shottr"
     "calibre"
     
     ##############
     # Development
     ##############
     "jetbrains-toolbox"
-    # "orbstack"
 
     ##############
     # Productivity
     ##############
     "publish-or-perish"
-    # "1password"
-    # "1password-cli"
+    "1password"
+    "1password-cli"
   ];
 
   homebrew.brews = [

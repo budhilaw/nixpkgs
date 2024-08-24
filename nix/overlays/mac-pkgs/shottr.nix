@@ -9,31 +9,30 @@ let
   inherit (stdenv.hostPlatform) system;
   throwSystem = throw "Unsupported system: ${system}";
 
-  pname = "_1password";
+  pname = "shottr";
 
-  # see version history https://desktop.telegram.org/changelog
   version =
     rec {
-      aarch64-darwin = "8.10.40";
+      aarch64-darwin = "1.7.2";
       x86_64-darwin = aarch64-darwin;
     }
     .${system} or throwSystem;
 
-  # sha256 =
-  #   rec {
-  #     aarch64-darwin = "sha256-g6Cm3bMq8nVPf2On94yNYmKdfnCyxaEsnVbsJYBaVZs";
-  #     x86_64-darwin = aarch64-darwin;
-  #   }
-  #   .${system} or throwSystem;
+  sha256 =
+    rec {
+      aarch64-darwin = "sha256-g6Cm3bMq8nVPf2On94yNYmKdfnCyxaEsnVbsJYBaVZs";
+      x86_64-darwin = aarch64-darwin;
+    }
+    .${system} or throwSystem;
 
   srcs =
     let
-      base = "https://downloads.1password.com/mac";
+      base = "https://shottr.cc/dl";
     in
     rec {
       aarch64-darwin = {
-        url = "${base}/1Password.pkg";
-        # sha256 = sha256;
+        url = "${base}/Shottr-${version}.dmg";
+        sha256 = sha256;
       };
       x86_64-darwin = aarch64-darwin;
     };
@@ -41,9 +40,8 @@ let
   src = fetchurl (srcs.${system} or throwSystem);
 
   meta = with lib; {
-    description = "1Password";
-    homepage = "https://1password.com/";
-    # license = licenses.gpl3Only;
+    description = "Shottr";
+    homepage = "https://shottr.cc/";
     platforms = [
       "x86_64-darwin"
       "aarch64-darwin"
@@ -60,12 +58,12 @@ let
 
     nativeBuildInputs = [ undmg ];
 
-    sourceRoot = "1Password.app";
+    sourceRoot = "Shottr.app";
 
     installPhase = ''
       runHook preInstall
-      mkdir -p $out/Applications/1Password.app
-      cp -R . $out/Applications/1Password.app
+      mkdir -p $out/Applications/Shottr.app
+      cp -R . $out/Applications/Shottr.app
       runHook postInstall
     '';
   };
