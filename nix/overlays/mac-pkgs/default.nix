@@ -10,6 +10,7 @@
         "orbstack"
         "telegram"
         "shottr"
+        "calibre"
       ];
     in
 

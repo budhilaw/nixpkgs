@@ -9,11 +9,11 @@ let
   inherit (stdenv.hostPlatform) system;
   throwSystem = throw "Unsupported system: ${system}";
 
-  pname = "shottr";
+  pname = "calibre";
 
   version =
     rec {
-      aarch64-darwin = "1.7.2";
+      aarch64-darwin = "7.17.0";
       x86_64-darwin = aarch64-darwin;
     }
     .${system} or throwSystem;
@@ -27,11 +27,11 @@ let
 
   srcs =
     let
-      base = "https://shottr.cc/dl";
+      base = "https://download.calibre-ebook.com";
     in
     rec {
       aarch64-darwin = {
-        url = "${base}/Shottr-${version}.dmg";
+        url = "${base}/${version}/calibre-${version}.dmg";
         sha256 = sha256;
       };
       x86_64-darwin = aarch64-darwin;
@@ -40,8 +40,8 @@ let
   src = fetchurl (srcs.${system} or throwSystem);
 
   meta = with lib; {
-    description = "Shottr";
-    homepage = "https://shottr.cc/";
+    description = "calibre";
+    homepage = "https://calibre-ebook.com/";
     platforms = [
       "x86_64-darwin"
       "aarch64-darwin"
@@ -58,12 +58,12 @@ let
 
     nativeBuildInputs = [ undmg ];
 
-    sourceRoot = "Shottr.app";
+    sourceRoot = "Calibre.app";
 
     installPhase = ''
       runHook preInstall
-      mkdir -p $out/Applications/Shottr.app
-      cp -R . $out/Applications/Shottr.app
+      mkdir -p $out/Applications/Calibre.app
+      cp -R . $out/Applications/Calibre.app
       runHook postInstall
     '';
   };

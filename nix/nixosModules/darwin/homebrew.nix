@@ -40,12 +40,6 @@ in
 
   homebrew.casks = [
     ##############
-    # Misc
-    ##############
-    # "shottr"
-    "calibre"
-    
-    ##############
     # Development
     ##############
     "jetbrains-toolbox"
