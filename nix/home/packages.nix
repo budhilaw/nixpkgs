@@ -88,6 +88,8 @@ in
       obs-studio
       telegram
       shottr
+      calibre
+      publish-or-perish
 
       ################################## 
       # Useful Nix related tools
