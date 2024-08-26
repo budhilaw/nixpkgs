@@ -11,6 +11,7 @@
         "telegram"
         "shottr"
         "sequel-ace"
+        "jetbrains-toolbox"
       ];
     in
 

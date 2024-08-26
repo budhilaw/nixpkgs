@@ -70,6 +70,7 @@ in
       go-migrate
       docker
       sequel-ace
+      jetbrains-toolbox
 
       ################################## 
       # Shell Integrations
