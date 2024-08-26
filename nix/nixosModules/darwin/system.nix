@@ -22,11 +22,13 @@
   system.keyboard.enableKeyMapping = true;
   # system.keyboard.remapCapsLockToEscape = true;
 
+  networking.knownNetworkServices = [
+    "Wi-Fi"
+    "USB 10/100/1000 LAN"
+  ];
+
   # Set DNS to use dnscrypt
   networking.dns = [
     "127.0.0.1"
-    # "192.168.18.1"
-    "1.1.1.1"
-    "1.0.0.1"
   ];
 }

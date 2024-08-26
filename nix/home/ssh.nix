@@ -11,14 +11,14 @@ in
       # Personal
       "github.com" = {
         hostname = "github.com";
-        user = "git";
+        user = "budhilaw";
         identityFile = "~/.ssh/id_ed25519_personal";
       };
 
       # Paper.id
       "github.com-paper" = {
         hostname = "github.com";
-        user = "git";
+        user = "ebudhilaw";
         identityFile = "~/.ssh/id_ed25519_work";
       };
     };

@@ -88,6 +88,7 @@ in
       obs-studio
       telegram
       shottr
+      obsidian
 
       ################################## 
       # Useful Nix related tools
