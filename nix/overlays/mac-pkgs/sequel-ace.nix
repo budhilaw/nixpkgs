@@ -12,7 +12,7 @@ let
 
   pname = "sequel-ace";
 
-  version-major =
+  version =
     rec {
       aarch64-darwin = "4.1.1";
       x86_64-darwin = aarch64-darwin;
@@ -23,7 +23,7 @@ let
 
   sha256 =
     rec {
-      aarch64-darwin = "sha256-8KPYzIZ1jiL5Z5DFnMRJ0a/W6C554GhNllYY5xz5Lkw=";
+      aarch64-darwin = "sha256-WJm3Swou7Vo3Fci6EsvUYQwyMVu7XAWAG8nxSV6pgO0=";
       x86_64-darwin = aarch64-darwin;
     }
     .${system} or throwSystem;
@@ -34,7 +34,7 @@ let
     in
     rec {
       aarch64-darwin = {
-        url = "${base}/${version-major}-${version-second}/Sequel-Ace-${version-major}.zip";
+        url = "${base}/${version}-${version-second}/Sequel-Ace-${version}.zip";
         sha256 = sha256;
       };
       x86_64-darwin = aarch64-darwin;
@@ -43,7 +43,7 @@ let
   src = fetchurl (srcs.${system} or throwSystem);
 
   meta = with lib; {
-    description = "MySQL/MariaDB database management";
+    description = "MySQL or MariaDB database management";
     homepage = "https://github.com/Sequel-Ace/Sequel-Ace";
     platforms = [
       "x86_64-darwin"
@@ -56,7 +56,7 @@ let
   darwin = stdenv.mkDerivation {
     inherit
       pname
-      version-major
+      version
       src
       meta
       ;
