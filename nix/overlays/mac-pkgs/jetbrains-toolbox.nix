@@ -13,21 +13,21 @@ let
 
   version =
     rec {
-      aarch64-darwin = "2.4.2,2.4.2.32922";
+      aarch64-darwin = "2.4.2.32922";
       x86_64-darwin = aarch64-darwin;
     }
     .${system} or throwSystem;
 
   sha256 =
     rec {
-      aarch64-darwin = "sha256-8KPYzIZ1jiL5Z5DFnMRJ0a/W6C554GhNllYY5xz5Lkw=";
+      aarch64-darwin = "sha256-ZYID5td5BdQpd5RP4sveO/OtKke2kHAxgu1OUEhgE0s=";
       x86_64-darwin = aarch64-darwin;
     }
     .${system} or throwSystem;
 
   srcs =
     let
-      base = "https://download.jetbrains.com/toolbox/";
+      base = "https://download.jetbrains.com/toolbox";
     in
     rec {
       aarch64-darwin = {
@@ -58,12 +58,12 @@ let
 
     nativeBuildInputs = [ undmg ];
 
-    sourceRoot = "Jetbrains Toolbox.app";
+    sourceRoot = "Jetbrains\ Toolbox.app";
 
     installPhase = ''
       runHook preInstall
-      mkdir -p $out/Applications/Jetbrains Toolbox.app
-      cp -R . $out/Applications/Jetbrains Toolbox.app
+      mkdir -p $out/Applications/Jetbrains\ Toolbox.app
+      cp -R . $out/Applications/Jetbrains\ Toolbox.app
       runHook postInstall
     '';
   };

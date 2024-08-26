@@ -42,7 +42,7 @@ in
     ##############
     # Development
     ##############
-    "jetbrains-toolbox"
+    # "jetbrains-toolbox"
     # "sequel-ace"
 
     ##############
