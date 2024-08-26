@@ -3,6 +3,7 @@
   stdenv,
   fetchurl,
   undmg,
+  unzip,
 }:
 
 let
@@ -18,7 +19,7 @@ let
     }
     .${system} or throwSystem;
   
-  version-second = "20070"
+  version-second = "20070";
 
   sha256 =
     rec {
@@ -55,7 +56,7 @@ let
   darwin = stdenv.mkDerivation {
     inherit
       pname
-      version
+      version-major
       src
       meta
       ;

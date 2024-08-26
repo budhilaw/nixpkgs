@@ -10,6 +10,7 @@
         "orbstack"
         "telegram"
         "shottr"
+        "sequel-ace"
       ];
     in
 
