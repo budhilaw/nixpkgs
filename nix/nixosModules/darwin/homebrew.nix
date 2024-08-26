@@ -40,12 +40,6 @@ in
 
   homebrew.casks = [
     ##############
-    # Development
-    ##############
-    # "jetbrains-toolbox"
-    # "sequel-ace"
-
-    ##############
     # Productivity
     ##############
     "publish-or-perish"
