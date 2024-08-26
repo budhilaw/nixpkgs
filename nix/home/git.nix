@@ -29,15 +29,15 @@ in
     difftool.prompt = false;
     merge.tool = "code";
     url = {
-      "git@github.com:" = {
-        insteadOf = "https://github.com/";
-      };
-      "git@github.com-paper:paper-indonesia" = {
-        insteadOf = "https://github.com/paper-indonesia/";
-      };
       "git@github.com-paper:" = {
         insteadOf = "https://github.com/";
       };
+      "git@github.com:" = {
+        insteadOf = "https://github.com/";
+      };
+      # "git@github.com-paper:paper-indonesia" = {
+      #   insteadOf = "https://github.com/paper-indonesia/";
+      # };
     };
   };
 

@@ -43,6 +43,7 @@ in
     # Development
     ##############
     "jetbrains-toolbox"
+    # "sequel-ace"
 
     ##############
     # Productivity

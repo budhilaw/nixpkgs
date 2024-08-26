@@ -68,6 +68,8 @@ in
       python3
       go-mockery
       go-migrate
+      docker
+      sequel-ace
 
       ################################## 
       # Shell Integrations
