@@ -94,6 +94,7 @@ in
       telegram
       shottr
       obsidian
+      iterm2
 
       ################################## 
       # Useful Nix related tools

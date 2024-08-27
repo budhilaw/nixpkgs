@@ -7,7 +7,6 @@
 {
   # Apps
   environment.systemPackages = with branches.master; [
-    iterm2
     terminal-notifier
   ];
 

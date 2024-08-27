@@ -12,6 +12,7 @@
         "shottr"
         "sequel-ace"
         "jetbrains-toolbox"
+        "iterm2"
       ];
     in
 

@@ -14,14 +14,14 @@ let
 
   version =
     rec {
-      aarch64-darwin = "3.5.4";
+      aarch64-darwin = "3_5_4";
       x86_64-darwin = aarch64-darwin;
     }
     .${system} or throwSystem;
 
   sha256 =
     rec {
-      aarch64-darwin = "sha256-WJm3Swou7Vo3Fci6EsvUYQwyMVu7XAWAG8nxSV6pgO0=";
+      aarch64-darwin = "sha256-rPuPk1UCd8IxxXKkiM0CkOdLzlODVKX1UVqInqS0S9U=";
       x86_64-darwin = aarch64-darwin;
     }
     .${system} or throwSystem;
@@ -49,7 +49,7 @@ let
     ];
   };
 
-  appname = "Iterm2";
+  appname = "Iterm";
 
   darwin = stdenv.mkDerivation {
     inherit
