@@ -57,6 +57,7 @@ in
       git
       sops
       # cloudflared
+      mkcert
       docker
       kubectl
       orbstack
@@ -65,6 +66,7 @@ in
       ################################## 
       # Programming Stuff
       ##################################
+      mysql84
       python3
       go-mockery
       go-migrate

@@ -42,6 +42,7 @@ in
     ##############
     # Productivity
     ##############
+    "logi-options+"
     "publish-or-perish"
     "calibre"
     "1password"
