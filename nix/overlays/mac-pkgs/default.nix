@@ -13,6 +13,7 @@
         "sequel-ace"
         "jetbrains-toolbox"
         "iterm2"
+        "notion"
       ];
     in
 

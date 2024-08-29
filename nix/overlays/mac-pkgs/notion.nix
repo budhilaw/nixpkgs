@@ -21,7 +21,7 @@ let
 
   sha256 =
     rec {
-      aarch64-darwin = "sha256-7AhHTAl3M1cEIEMAIg+lj/WGIS2xFOlIWJ+bC8NLBwI=";
+      aarch64-darwin = "sha256-FSZL3Omo/zLC/DFaCjvvs+hc32x8vpGsZ8rcgbuqfzg=";
       x86_64-darwin = aarch64-darwin;
     }
     .${system} or throwSystem;
@@ -33,7 +33,7 @@ let
     rec {
       aarch64-darwin = {
         inherit sha256;
-        url = "${base}/Notion-${version}arm64.dmg";
+        url = "${base}/Notion-${version}-arm64.dmg";
       };
       x86_64-darwin = aarch64-darwin // {
         url = "TODO";
