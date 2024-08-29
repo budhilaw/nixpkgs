@@ -94,6 +94,7 @@ in
       telegram
       shottr
       obsidian
+      notion
       iterm2
 
       ################################## 
