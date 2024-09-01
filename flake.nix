@@ -48,5 +48,3 @@
     };
   };
 }
-
-# vim: foldmethod=marker
