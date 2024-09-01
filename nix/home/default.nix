@@ -7,9 +7,8 @@
     budhilaw-shell = import ./shells.nix;
     budhilaw-git = import ./git.nix;
     budhilaw-ssh = import ./ssh.nix;
-    budhilaw-tmux = import ./tmux.nix;
+    #budhilaw-tmux = import ./tmux.nix;
     gpg = import ./gpg.nix;
-    # pass = import ./pass.nix;
     home-user-info =
       { lib, ... }:
       {

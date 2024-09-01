@@ -78,6 +78,7 @@ in
       # Shell Integrations
       ################################## 
       starship # theme for shell (bash,fish,zsh)
+      tmux
 
       ################################## 
       # Misc
