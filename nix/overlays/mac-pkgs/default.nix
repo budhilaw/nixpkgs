@@ -8,12 +8,12 @@
       packages = [
         "obs-studio"
         "orbstack"
-        "telegram"
+        # "telegram"
         "shottr"
         "sequel-ace"
         "jetbrains-toolbox"
         "iterm2"
-        "notion"
+        # "notion"
       ];
     in
 
