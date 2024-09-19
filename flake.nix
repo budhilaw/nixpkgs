@@ -12,7 +12,7 @@
       imports = [
         inputs.pre-commit-hooks.flakeModule
         ./nix
-        ./nvim.nix
+        # ./nvim.nix
       ];
     };
 
