@@ -40,14 +40,14 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
     #### ---- nixvim
-    nixvim.url = "github:nix-community/nixvim";
-    nixvim.inputs.nixpkgs.follows = "nixpkgs";
-    nixvim.inputs.nix-darwin.follows = "nix-darwin";
-    nixvim.inputs.home-manager.follows = "home-manager";
-    nixvim.inputs.flake-parts.follows = "flake-parts";
+    # nixvim.url = "github:nix-community/nixvim";
+    # nixvim.inputs.nixpkgs.follows = "nixpkgs";
+    # nixvim.inputs.nix-darwin.follows = "nix-darwin";
+    # nixvim.inputs.home-manager.follows = "home-manager";
+    # nixvim.inputs.flake-parts.follows = "flake-parts";
 
-    neorg-overlay.url = "github:nvim-neorg/nixpkgs-neorg-overlay";
-    neorg-overlay.inputs.nixpkgs.follows = "nixpkgs";
+    # neorg-overlay.url = "github:nvim-neorg/nixpkgs-neorg-overlay";
+    # neorg-overlay.inputs.nixpkgs.follows = "nixpkgs";
 
     # utilities
     pre-commit-hooks.url = "github:cachix/pre-commit-hooks.nix";
