@@ -66,7 +66,7 @@ let
                   home.username = user.username;
                   home.packages = [
                     # pkgs.sops
-                    self.packages.${system}.nvim
+                    # self.packages.${system}.nvim
                     config.nix.package
                   ];
                   # sops.gnupg.home = "~/.gnupg";
@@ -95,7 +95,7 @@ in
       email = "hi@budhilaw.com";
       nixConfigDirectory = "/Users/${username}/.config/nixpkgs";
       within = {
-        neovim.enable = false;
+        # neovim.enable = false;
         gpg.enable = true;
         pass.enable = true;
       };
