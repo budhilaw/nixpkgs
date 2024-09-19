@@ -86,7 +86,7 @@ in
       gnupg
       openssl
       raycast
-      arc-browser
+      # arc-browser
       iina
       hidden-bar
       appcleaner
