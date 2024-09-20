@@ -47,6 +47,7 @@ in
     "calibre"
     "1password"
     "1password-cli"
+    "cloudflare-warp"
   ];
 
   homebrew.brews = [
