@@ -84,7 +84,6 @@ let
     '';
     
     phases = [
-      "unpackPhase"
       "installPhase"
     ];
 
