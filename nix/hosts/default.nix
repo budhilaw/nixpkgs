@@ -50,15 +50,15 @@ let
                 home-manager.useGlobalPkgs = true;
                 home-manager.useUserPackages = true;
                 home-manager.users.${user.username} = {
-                  imports = attrValues self.homeManagerModules ++ [
-                    inputs.sops.homeManagerModules.sops
-                    (
-                      { ... }:
-                      {
-                        home.sessionVariables.EDITOR = "nano";
-                      }
-                    )
-                  ];
+                  # imports = attrValues self.homeManagerModules ++ [
+                  #   inputs.sops.homeManagerModules.sops
+                  #   (
+                  #     { ... }:
+                  #     {
+                  #       home.sessionVariables.EDITOR = "nano";
+                  #     }
+                  #   )
+                  # ];
                   home.enableNixpkgsReleaseCheck = false;
                   home.stateVersion = homeManagerStateVersion;
                   home.user-info = user;
