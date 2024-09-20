@@ -2,7 +2,10 @@
   lib,
   stdenv,
   fetchurl,
-  undmg,
+  # , undmg
+  makeWrapper,
+  xar,
+  cpio,
 }:
 
 let
