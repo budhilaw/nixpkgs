@@ -14,7 +14,7 @@
         "jetbrains-toolbox"
         "iterm2"
         "cloudflare-warp"
-        # "notion"
+        "notion"
       ];
     in
 
