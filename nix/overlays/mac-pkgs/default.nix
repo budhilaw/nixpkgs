@@ -13,7 +13,7 @@
         "sequel-ace"
         "jetbrains-toolbox"
         "iterm2"
-        "cloudflare-warp"
+        # "cloudflare-warp"
         # "notion"
       ];
     in
