@@ -87,7 +87,6 @@ in
       openssl
       raycast
       arc-browser
-      cloudflare-warp
       iina
       hidden-bar
       appcleaner
@@ -96,7 +95,6 @@ in
       telegram
       shottr
       obsidian
-      # notion
       iterm2
 
       ################################## 
