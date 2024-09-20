@@ -8,7 +8,7 @@
       packages = [
         "obs-studio"
         "orbstack"
-        # "telegram"
+        "telegram"
         "shottr"
         "sequel-ace"
         "jetbrains-toolbox"

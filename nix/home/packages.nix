@@ -92,7 +92,7 @@ in
       appcleaner
       ffmpeg
       obs-studio
-      # telegram
+      telegram
       shottr
       obsidian
       # notion

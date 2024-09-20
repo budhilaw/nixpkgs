@@ -13,7 +13,7 @@ let
     {
       system ? "aarch64-darwin",
       user ? self.users.default,
-      stateVersion ? 4,
+      stateVersion ? 5,
       homeManagerStateVersion ? "24.05",
       modules ? [ ],
     }:
