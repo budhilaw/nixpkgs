@@ -91,7 +91,7 @@ in
       username = "budhilaw";
       fullName = "Ericsson Budhilaw";
       email = "hi@budhilaw.com";
-      nixConfigDirectory = "/Users/${username}/.config/nixpkgs";
+      nixConfigDirectory = "/Users/${username}/.config/nixverse";
       within = {
         # neovim.enable = false;
         gpg.enable = true;
