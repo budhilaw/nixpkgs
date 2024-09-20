@@ -58,40 +58,22 @@ let
       meta
       ;
 
-    nativeBuildInputs = [ undmg ];
-    unpackCmd = ''
-      echo "File to unpack: $curSrc"
-      if ! [[ "$curSrc" =~ \.dmg$ ]]; then return 1; fi
-      mnt=$(mktemp -d -t ci-XXXXXXXXXX)
-
-      function finish {
-        echo "Detaching $mnt"
-        /usr/bin/hdiutil detach $mnt -force
-        rm -rf $mnt
-      }
-      trap finish EXIT
-
-      echo "Attaching $mnt"
-      /usr/bin/hdiutil attach -nobrowse -readonly $src -mountpoint $mnt
-
-      echo "What's in the mount dir"?
-      ls -la $mnt/
-
-      echo "Copying contents"
-      shopt -s extglob
-      DEST="$PWD"
-      (cd "$mnt"; cp -a !(Applications) "$DEST/")
-    '';
-    
-    phases = [
-      "installPhase"
+    nativeBuildInputs = [
+      makeWrapper
+      xar
+      cpio
     ];
 
-    sourceRoot = "${appname}.app";
+    unpackPhase = lib.optionalString stdenv.isDarwin ''
+      xar -xf $src
+      zcat < warp.pkg/Payload | cpio -i
+    '';
 
     installPhase = ''
-      mkdir -p "$out/Applications/${appname}.app"
-      cp -a ./. "$out/Applications/${appname}.app/"
+      runHook preInstall
+      mkdir -p $out/Applications
+      cp -R ./Applications/${appname}.app $out/Applications/
+      runHook postInstall
     '';
   };
 in

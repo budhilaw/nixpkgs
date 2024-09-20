@@ -87,7 +87,7 @@ in
       openssl
       raycast
       arc-browser
-      # cloudflare-warp
+      cloudflare-warp
       iina
       hidden-bar
       appcleaner

@@ -113,7 +113,6 @@ let
       age = "${pkgs.rage}/bin/rage";
 
       # Shell related
-      e = "nvim";
       grep = "${pkgs.ripgrep}/bin/rg";
       c = "z";
       cc = "zi";
@@ -145,11 +144,6 @@ let
       gfa = "git fetch --all";
       grc = "git rebase --continue";
       gri = "git rebase --interactive";
-
-      # Documentation
-      todo = "nvim ${nixConfigDirectory}/notes/todo.norg";
-      todox = "nvim ${nixConfigDirectory}/secrets/todo.norg";
-      diary = "nvim ${nixConfigDirectory}/notes/diary.norg";
     };
 in
 {

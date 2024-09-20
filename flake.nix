@@ -12,7 +12,6 @@
       imports = [
         inputs.pre-commit-hooks.flakeModule
         ./nix
-        # ./nvim.nix
       ];
     };
 
@@ -42,16 +41,6 @@
     #### ---- Home
     home-manager.url = "github:nix-community/home-manager/master";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
-
-    #### ---- nixvim
-    nixvim.url = "github:nix-community/nixvim";
-    nixvim.inputs.nixpkgs.follows = "nixpkgs";
-    nixvim.inputs.nix-darwin.follows = "nix-darwin";
-    nixvim.inputs.home-manager.follows = "home-manager";
-    nixvim.inputs.flake-parts.follows = "flake-parts";
-
-    neorg-overlay.url = "github:nvim-neorg/nixpkgs-neorg-overlay";
-    neorg-overlay.inputs.nixpkgs.follows = "nixpkgs";
 
     iamb.url = "github:ulyssa/iamb";
     iamb.inputs.nixpkgs.follows = "nixpkgs";

@@ -60,7 +60,6 @@
     }
     {
       plugin = resurrect;
-      extraConfig = "set -g @resurrect-strategy-nvim 'session'";
     }
     {
       plugin = continuum;

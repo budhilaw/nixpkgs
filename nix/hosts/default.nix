@@ -51,14 +51,13 @@ let
                 home-manager.useUserPackages = true;
                 home-manager.users.${user.username} = {
                   imports = attrValues self.homeManagerModules ++ [
-                    # inputs.sops.homeManagerModules.sops
-                    # (
-                    #   { ... }:
-                    #   {
-                    #     home.sessionVariables.EDITOR = "nano"; # TODO change to nvim later
-                    #     # home.sessionVariables.OPENAI_API_KEY = "$(cat ~/.config/sops-nix/secrets/openai_api_key)";
-                    #   }
-                    # )
+                    inputs.sops.homeManagerModules.sops
+                    (
+                      { ... }:
+                      {
+                        home.sessionVariables.EDITOR = "nano";
+                      }
+                    )
                   ];
                   home.enableNixpkgsReleaseCheck = false;
                   home.stateVersion = homeManagerStateVersion;
@@ -66,7 +65,6 @@ let
                   home.username = user.username;
                   home.packages = [
                     # pkgs.sops
-                    # self.packages.${system}.nvim
                     config.nix.package
                   ];
                   # sops.gnupg.home = "~/.gnupg";
