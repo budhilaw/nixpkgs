@@ -56,7 +56,6 @@ in
       pkg-config
       git
       sops
-      # cloudflared
       mkcert
       docker
       kubectl
@@ -97,7 +96,6 @@ in
       obsidian
       iterm2
       mos
-      ghostscript
 
       ################################## 
       # Useful Nix related tools

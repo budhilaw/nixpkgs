@@ -43,8 +43,17 @@ in
     # Productivity
     ##############
     "logi-options+"
+    "orion"
+    
+    ##############
+    # Study
+    ##############
     "publish-or-perish"
     "calibre"
+
+    ##############
+    # Misc
+    ##############
     "1password"
     "1password-cli"
     "cloudflare-warp"
