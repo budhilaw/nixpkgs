@@ -97,6 +97,7 @@ in
       obsidian
       iterm2
       mos
+      ghostscript
 
       ################################## 
       # Useful Nix related tools
