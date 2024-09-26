@@ -43,7 +43,6 @@ in
     # Productivity
     ##############
     "logi-options+"
-    "orion"
     
     ##############
     # Study
