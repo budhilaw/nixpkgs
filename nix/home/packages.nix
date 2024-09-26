@@ -96,6 +96,7 @@ in
       shottr
       obsidian
       iterm2
+      mos
 
       ################################## 
       # Useful Nix related tools
