@@ -15,7 +15,6 @@ in
   programs.bat.enable = true;
   programs.bat.config = {
     style = "plain";
-    theme = "Catppuccin Frappe";
   };
 
   # https://direnv.net

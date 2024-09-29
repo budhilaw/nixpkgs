@@ -2,8 +2,8 @@
 
 {
   imports = [
-    ./mac-pkgs
     ./nodePackages
+    ./mac-pkgs
   ];
 
   flake.overlays.default = final: prev: {

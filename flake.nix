@@ -33,7 +33,7 @@
     #### ---- MacOS
     # nix-darwin.url = "github:LnL7/nix-darwin";
     nix-darwin = {
-      url = "github:emilazy/nix-darwin/push-zovpmlzlzvvm";
+      url = "github:LnL7/nix-darwin";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     # nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
