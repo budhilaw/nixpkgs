@@ -12,7 +12,9 @@
       pre-commit.settings.hooks = {
         actionlint.enable = true;
         shellcheck.enable = true;
-        nixfmt.enable = true;
+        deadnix.enable = true;
+        deadnix.excludes = [ "nix/overlays/nodePackages/node2nix" ];
+        nixfmt-rfc-style.enable = true;
       };
 
       devShells =
