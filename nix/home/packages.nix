@@ -95,6 +95,7 @@ in
       obsidian
       iterm2
       mos
+      fastfetch
 
       ################################## 
       # Useful Nix related tools

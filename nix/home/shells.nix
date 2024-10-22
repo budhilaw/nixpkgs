@@ -270,6 +270,10 @@ in
             discharging_symbol = "💀 ";
           };
 
+          docker_context = {
+            disabled = true;
+          };
+
           bun.format = defaultProgramFormat;
           git_branch.format = withEndLineBreak "[$symbol$branch]($style)";
           git_status.format = withEndLineBreak "([$all_status$ahead_behind]($style))";
