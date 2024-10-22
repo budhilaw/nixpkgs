@@ -10,7 +10,6 @@
         "orbstack"
         "telegram"
         "shottr"
-        "sequel-ace"
         "jetbrains-toolbox"
         "iterm2"
       ];

@@ -45,11 +45,11 @@ in
       wget
       curl
       eza
+      fastfetch
 
       ################################## 
       # Development
       ##################################
-      neovim
       vscode
       postman
       pkg-config
@@ -69,7 +69,6 @@ in
       go-mockery
       go-migrate
       docker
-      sequel-ace
       jetbrains-toolbox
 
       ################################## 
@@ -95,7 +94,6 @@ in
       obsidian
       iterm2
       mos
-      fastfetch
 
       ################################## 
       # Useful Nix related tools
