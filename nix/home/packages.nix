@@ -92,7 +92,6 @@ in
       telegram
       shottr
       obsidian
-      iterm2
       mos
 
       ################################## 

@@ -40,6 +40,12 @@ in
 
   homebrew.casks = [
     ##############
+    # Tech
+    ##############
+    "iterm2"
+    "cursor"
+
+    ##############
     # Productivity
     ##############
     "logi-options+"

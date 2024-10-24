@@ -11,7 +11,6 @@
         "telegram"
         "shottr"
         "jetbrains-toolbox"
-        "iterm2"
       ];
     in
 
