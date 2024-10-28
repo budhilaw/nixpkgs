@@ -30,6 +30,7 @@ in
 
   homebrew.taps = [
     "homebrew/services"
+    "gromgit/homebrew-fuse"
   ];
 
   homebrew.masApps = {
@@ -52,6 +53,8 @@ in
     "logi-options+"
     "firefox"
     "google-chrome"
+    "macfuse"
+    "mounty"
     
     ##############
     # Study
@@ -68,7 +71,10 @@ in
   ];
 
   homebrew.brews = [
-    # None
+    ##############
+    # Productivity
+    ##############
+    "ntfs-3g-mac"
   ];
 
 }

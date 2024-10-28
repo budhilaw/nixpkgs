@@ -60,22 +60,6 @@
               ];
             };
 
-          mkRustShell =
-            name:
-            let
-              rust = pkgs.${name};
-            in
-            pkgs.mkShell {
-              description = "${name} Development Environment";
-              nativeBuildInputs = with pkgs; [
-                rustc
-                cargo
-                gcc
-                rustfmt
-                clippy
-              ];
-            };
-
           mkGoShell =
             name:
             let
@@ -96,8 +80,6 @@
               mkNodeShell name
             else if lib.strings.hasPrefix "go_" pkgName then
               mkGoShell name
-            else if lib.strings.hasPrefix "rust" pkgName then
-              mkRustShell name
             else
               builtins.throw "Unknown package ${pkgName} for making shell environment";
 
@@ -147,19 +129,43 @@
           #    $ nix develop github:budhilaw/nixpkgs#rust-wasm
           #
           #
-          rust-wasm = pkgs.mkShell {
-            description = "Rust  Development Environment";
-            # declared ENV variables when starting shell
-            RUST_SRC_PATH = "${pkgs.rust.packages.stable.rustPlatform.rustLibSrc}";
-
+          rust = pkgs.mkShell {
+            description = "Rust Development Environment with rustup";
+            
             nativeBuildInputs = with pkgs; [
-              rustc
-              cargo
+              # System dependencies
+              pkg-config
+              curl
               gcc
-              rustfmt
-              clippy
-              toolchain
+              openssl.dev
+              # Required for some Rust crates
+              libiconv
+              # Required for wasm-pack
+              wasm-pack
             ];
+
+            buildInputs = with pkgs; [
+              rustup  # Using rustup instead of specific Rust version
+            ];
+
+            shellHook = ''
+              # Initialize rustup if not already done
+              if ! command -v rustup &> /dev/null; then
+                rustup-init -y --no-modify-path
+              fi
+              
+              # Add cargo bin to PATH
+              export PATH=$HOME/.cargo/bin:$PATH
+              
+              # For openssl-sys
+              export PKG_CONFIG_PATH="${pkgs.openssl.dev}/lib/pkgconfig"
+              
+              # For custom target directory within the project
+              export CARGO_TARGET_DIR="target"
+              
+              # Ensure target directory exists
+              mkdir -p $CARGO_TARGET_DIR
+            '';
           };
 
           #
