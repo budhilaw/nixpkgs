@@ -10,7 +10,6 @@
         "orbstack"
         "telegram"
         "shottr"
-        "jetbrains-toolbox"
       ];
     in
 

@@ -43,12 +43,15 @@ in
     # Tech
     ##############
     "iterm2"
-    "cursor"
+    "jetbrains-toolbox"
+    "pritunl"
 
     ##############
     # Productivity
     ##############
     "logi-options+"
+    "firefox"
+    "google-chrome"
     
     ##############
     # Study

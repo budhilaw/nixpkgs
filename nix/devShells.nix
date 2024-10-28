@@ -60,6 +60,22 @@
               ];
             };
 
+          mkRustShell =
+            name:
+            let
+              rust = pkgs.${name};
+            in
+            pkgs.mkShell {
+              description = "${name} Development Environment";
+              nativeBuildInputs = with pkgs; [
+                rustc
+                cargo
+                gcc
+                rustfmt
+                clippy
+              ];
+            };
+
           mkGoShell =
             name:
             let
@@ -80,6 +96,8 @@
               mkNodeShell name
             else if lib.strings.hasPrefix "go_" pkgName then
               mkGoShell name
+            else if lib.strings.hasPrefix "rust" pkgName then
+              mkRustShell name
             else
               builtins.throw "Unknown package ${pkgName} for making shell environment";
 
@@ -140,6 +158,7 @@
               gcc
               rustfmt
               clippy
+              toolchain
             ];
           };
 

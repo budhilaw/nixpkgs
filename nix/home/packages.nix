@@ -69,7 +69,6 @@ in
       go-mockery
       go-migrate
       docker
-      jetbrains-toolbox
 
       ################################## 
       # Shell Integrations
