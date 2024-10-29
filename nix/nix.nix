@@ -20,6 +20,7 @@ in
     nix.flake = inputs.nix;
     nix-darwin.flake = inputs.nix-darwin;
     home-manager.flake = inputs.home-manager;
+    devenv.flake = inputs.devenv;
   };
 
   settings =

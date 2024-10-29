@@ -49,6 +49,10 @@
     pre-commit-hooks.url = "github:cachix/pre-commit-hooks.nix";
     pre-commit-hooks.inputs.nixpkgs.follows = "nixpkgs";
 
+    # devenv for development environments
+    devenv.url = "github:cachix/devenv";
+    devenv.inputs.nixpkgs.follows = "nixpkgs";
+
     # others 
     nix-env = {
       url = "github:lilyball/nix-env.fish";

@@ -61,6 +61,7 @@
           extraModuleArgs = {
             inherit inputs' system;
             inputs = lib.mkForce inputs;
+            devenv = inputs.devenv;
 
             /*
               One can access these nixpkgs branches like so:
