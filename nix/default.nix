@@ -8,6 +8,7 @@
 
     ./devShells.nix
     ./overlays
+    inputs.devenv.flakeModule # Add devenv flakeModule here
   ];
 
   perSystem =
@@ -61,7 +62,6 @@
           extraModuleArgs = {
             inherit inputs' system;
             inputs = lib.mkForce inputs;
-            devenv = inputs.devenv;
 
             /*
               One can access these nixpkgs branches like so:
