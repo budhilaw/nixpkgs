@@ -52,7 +52,6 @@ in
     ##############
     "logi-options+"
     "firefox"
-    "google-chrome"
     "macfuse"
     "mounty"
     
