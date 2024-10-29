@@ -8,7 +8,6 @@
 
     ./devShells.nix
     ./overlays
-    inputs.devenv.flakeModule # Add devenv flakeModule here
   ];
 
   perSystem =
