@@ -46,6 +46,7 @@ in
       curl
       eza
       fastfetch
+      google-chrome
 
       ################################## 
       # Development
@@ -82,7 +83,6 @@ in
       gnupg
       openssl
       raycast
-      arc-browser
       iina
       hidden-bar
       appcleaner
