@@ -52,6 +52,7 @@ in
     ##############
     "logi-options+"
     "firefox"
+    "arc"
     "macfuse"
     "mounty"
     
