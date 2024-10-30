@@ -113,7 +113,7 @@
           };
 
           php-nginx = devenv.lib.mkShell {
-            inherit pkgs;
+            inherit inputs pkgs;
             modules = [
               ({ pkgs, config, ... }: {
                 # This is your devenv configuration
