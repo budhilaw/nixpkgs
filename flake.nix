@@ -12,7 +12,6 @@
       imports = [
         inputs.pre-commit-hooks.flakeModule
         inputs.devenv.flakeModule
-        
         ./nix
       ];
     };
