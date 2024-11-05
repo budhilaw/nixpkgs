@@ -54,7 +54,6 @@ in
       vscode
       postman
       pkg-config
-      git
       sops
       mkcert
       docker
@@ -97,7 +96,6 @@ in
       # Useful Nix related tools
       ################################## 
       cachix
-      nix-prefetch-git
     ] ++ lib.optionals
       stdenv.isDarwin
       [

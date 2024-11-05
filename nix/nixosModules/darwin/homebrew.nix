@@ -53,6 +53,7 @@ in
     "logi-options+"
     "firefox"
     "arc"
+    "zen-browser"
     "macfuse"
     "mounty"
     
@@ -75,6 +76,7 @@ in
     # Productivity
     ##############
     "ntfs-3g-mac"
+    "git"
   ];
 
 }
