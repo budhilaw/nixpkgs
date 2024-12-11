@@ -46,19 +46,15 @@ in
       curl
       eza
       fastfetch
-      google-chrome
 
       ################################## 
       # Development
       ##################################
-      vscode
-      postman
       pkg-config
       sops
       mkcert
       docker
       kubectl
-      orbstack
       (google-cloud-sdk.withExtraComponents [google-cloud-sdk.components.gke-gcloud-auth-plugin])
 
       ################################## 
@@ -81,16 +77,7 @@ in
       ################################## 
       gnupg
       openssl
-      raycast
-      iina
-      hidden-bar
-      appcleaner
       ffmpeg
-      obs-studio
-      telegram
-      shottr
-      obsidian
-      mos
 
       ################################## 
       # Useful Nix related tools
@@ -102,8 +89,5 @@ in
         mas
         m-cli # useful macOS CLI commands
         xcode-install
-        rectangle
-        discord
-        zoom-us
       ];
 }

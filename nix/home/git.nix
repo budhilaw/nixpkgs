@@ -4,13 +4,13 @@ let
   budhilaw = {
     name = "Ericsson Budhilaw";
     email = "ericsson.budhilaw@gmail.com";
-    signingKey = "1935BD7070055DDC";
+    signingKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIYwjcDzshHuZwKxy4L+MNkYUfIN8d8CehEkvqlQiJPx";
   };
 
   paper = {
     name = "Ericsson Budhilaw";
     email = "ericsson.budhilaw@paper.id";
-    signingKey = "6978961D6E0EC67C";
+    signingKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOL/lqfHM8B0cF9xC9wO1rwLlDIRCqGHGmVGgS7olsf3";
   };
 in
 {
@@ -21,7 +21,8 @@ in
   ];
 
   programs.git.extraConfig = {
-    gpg.program = "gpg";
+    gpg.format = "ssh";
+    gpg.program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign";
     rerere.enable = true;
     commit.gpgSign = true;
     pull.ff = "only";

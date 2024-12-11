@@ -223,6 +223,10 @@ in
         set -U fish_color_param 6CB6EB
         set fish_greeting
 
+        # Golang
+        set -gx GOPATH $HOME/Tools/Go
+        fish_add_path $GOPATH/bin
+
         # Jetbrains
         fish_add_path /${if pkgs.stdenv.isDarwin then "Users" else "home"}/${config.home.username}/Library/Application\ Support/JetBrains/Toolbox/scripts
 

@@ -35,27 +35,68 @@ in
 
   homebrew.masApps = {
     Slack = 803453959;
-    CopyClip = 595191960;
     WhatsApp = 310633997;
   };
 
   homebrew.casks = [
+    ##############
+    # Fonts
+    ##############
+    "font-fira-mono-nerd-font"
+    "font-inconsolata-go-nerd-font"
+    "font-inconsolata-lgc-nerd-font"
+    "font-inconsolata-nerd-font"
+    "font-ubuntu-mono-nerd-font"
+    "font-caskaydia-cove-nerd-font"
+    "font-code-new-roman-nerd-font"
+    "font-cousine-nerd-font"
+    "font-daddy-time-mono-nerd-font"
+    "font-dejavu-sans-mono-nerd-font"
+    "font-droid-sans-mono-nerd-font"
+    "font-fira-code-nerd-font"
+    "font-go-mono-nerd-font"
+    "font-gohufont-nerd-font"
+    "font-hack-nerd-font"
+    "font-jetbrains-mono-nerd-font"
+    "font-liberation-nerd-font"
+    "font-meslo-lg-nerd-font"
+    "font-monoid-nerd-font"
+    "font-mononoki-nerd-font"
+    "font-noto-nerd-font"
+    "font-roboto-mono-nerd-font"
+    "font-shure-tech-mono-nerd-font"
+    "font-ubuntu-nerd-font"
+
     ##############
     # Tech
     ##############
     "iterm2"
     "jetbrains-toolbox"
     "pritunl"
+    "visual-studio-code"
+    "postman"
+    "orbstack"
+    "obsidian"
 
     ##############
     # Productivity
     ##############
+    # "macfuse"
+    # "mounty"
+    
     "logi-options+"
-    "firefox"
+    "brave-browser"
     "arc"
-    "zen-browser"
-    "macfuse"
-    "mounty"
+    "raycast"
+    "hiddenbar"
+    "appcleaner"
+    "obs"
+    "telegram"
+    "shottr"
+    "notion"
+    "rectangle"
+    "discord"
+    "zoom"
     
     ##############
     # Study
@@ -69,14 +110,16 @@ in
     "1password"
     "1password-cli"
     "cloudflare-warp"
+    "iina"
   ];
 
   homebrew.brews = [
     ##############
     # Productivity
     ##############
-    "ntfs-3g-mac"
+    # "ntfs-3g-mac"
     "git"
+    "terminal-notifier"
   ];
 
 }
