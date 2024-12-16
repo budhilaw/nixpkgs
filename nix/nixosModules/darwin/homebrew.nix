@@ -119,6 +119,7 @@ in
     ##############
     # "ntfs-3g-mac"
     "git"
+    "pinentry-mac"
     "terminal-notifier"
   ];
 

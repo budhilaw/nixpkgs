@@ -14,7 +14,7 @@ let
       system ? "aarch64-darwin",
       user ? self.users.default,
       stateVersion ? 5,
-      homeManagerStateVersion ? "24.05",
+      homeManagerStateVersion ? "24.11",
       modules ? [ ],
     }:
     withSystem system (

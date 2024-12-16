@@ -36,9 +36,6 @@ in
       "git@github.com:" = {
         insteadOf = "https://github.com/";
       };
-      # "git@github.com-paper:paper-indonesia" = {
-      #   insteadOf = "https://github.com/paper-indonesia/";
-      # };
     };
   };
 

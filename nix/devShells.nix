@@ -126,7 +126,7 @@
             '';
           };
 
-                #
+          #
           #
           #    $ nix develop github:r17x/nixpkgs#rust-wasm
           #
